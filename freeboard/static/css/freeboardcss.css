@@ -1,0 +1,134 @@
+.createbtn{
+    border: 2px solid #DDDDDD;
+    width: 75px;
+    height: 30px;
+    background: white;
+    float: right;
+    margin-top: 5px;
+}
+
+.lower-part{
+    background-color: white;
+}
+
+/* board table */
+.free-board-wrap{
+    padding: 40px 0 0 0;
+    background-color: white;
+    width: 920px;
+    margin: 20px auto 0 auto;
+    border-radius: 20px;
+    box-shadow: 1px 1px 10px 0 rgba(15, 19, 32, 0.8);
+}
+.free-board-container{
+    width: 900px;
+    height: 650px;
+    margin: 0px auto 0 auto;
+    border-top: 1px solid black;
+}
+
+.post-num{
+    width: 80px;
+    text-align: center;
+}
+.post-title{
+    width:620px;
+    text-overflow:ellipsis;
+}
+.post-writer{
+    width: 120px;
+    text-align: center;
+}
+.post-views{
+    width: 80px;
+    text-align: center;
+}
+.board-contents{
+    margin-top: 55px;
+}
+
+.free-board-post{
+    width: 100%;
+    border-top: 2px solid #DDDDDD   ;
+    height: 35px;
+}
+
+.freeboard-search{
+    width: 100%;
+    padding-right: 90px;
+    margin: 0 auto;
+}
+
+.freeboard-searchbox{
+    width:500px;
+    margin: 10px 0 10px 20px;
+}
+.freeboard-btn {
+    width: 60px;
+    height: 26px;
+    outline: none;
+    border:1px solid #8763FB;
+    background: linear-gradient(to right, #6478FB, #8763FB, #38B9C0 );
+    color: wheat;
+}
+.freeboard-btn:hover{
+    color: white;
+}
+
+/* DETAIL PAGE*/
+.post-comments {
+    border-top: 1px solid black;
+}
+
+.comment-form {
+    width: 100%;
+    height: 65px;
+    position: relative;
+}
+.comment-box {
+    width: 80%;
+    height: 50px;
+    margin-top: 15px;
+    border: 1.5px solid #555555;
+}
+
+.comment-submit {
+    outline: none;
+    height: 50px;
+    top:15px;
+    right: 35px;
+    position: absolute;
+}
+
+.comments {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.comment-header {
+    widows: 100%;
+    border-bottom: 2px solid rgba(40, 40, 40, 0.8);
+}
+
+.comment-tr {
+    border-bottom: 1px solid rgba(33,33,33,0.5);
+    height: 30px;
+}
+
+.comment-author {
+    width: 100px;
+    text-align: center;
+}
+
+.comment-text {
+    width: 710px;
+    word-break: break-all;
+}
+
+.comment-delete {
+    text-align: center;
+}
+
+.btns{
+}
+/* Fonts */
