@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.contrib import auth
 from django.http import JsonResponse
 
+
 # Create your views here.
 def login(request):
     if request.method == "POST":
@@ -25,11 +26,19 @@ def signup(request):
             user = User.objects.create_user(
                 request.POST['username'],
                 password = request.POST['password'],
-                email = request.POST['email']
+                email = request.POST['email'],
+                
             )
+        user.profile.bio = request.POST['bio']
+        print( user.profile.bio)
         auth.login(request,user)
         return redirect('/')
     return render(request,'signup.html')
+
+def update_profile(request, user_id):
+    user = User.objects.get(pk=user_id)
+    user.profile.bio = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit...'
+    user.save()    
 
 def checkid(request):
     try:
