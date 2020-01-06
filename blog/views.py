@@ -1,11 +1,18 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import Blog
+from django.core.paginator import Paginator
 from django.utils import timezone
+from .models import Blog
+
 # Create your views here.
 
 def home(request):
     blogs = Blog.objects #쿼리셋 - 전달받은 객체 #메소드
-    return render(request, 'home.html', {'blogs' : blogs})
+    blog_list = Blog.objects.all()
+    paginator = Paginator(blog_list, 3)
+    page = request.GET.get('page')
+    posts = paginator.get_page(page)
+    return render(request, 'home.html', {'blogs': blogs, 'posts' : posts})
+
 
     # 쿼리셋과 메소드의 형식
     # 모델.쿼리셋(objects).메소드
@@ -23,7 +30,9 @@ def create(request):
     blog.body = request.GET['body']
     blog.pub_date = timezone.datetime.now()
     blog.save()
-    # return redirect('/blog/'+str(blog.id))
-    return redirect('null')
+    return redirect('/blog/'+str(blog.id))
+    # return redirect('null')
     # return render(request, 'home.html')
-    #입력받은 내용을 데이터 베이스에 넣어주는 함수
+    # 입력받은 내용을 데이터 베이스에 넣어주는 함수
+
+

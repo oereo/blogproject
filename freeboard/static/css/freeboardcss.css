@@ -67,8 +67,8 @@
     width: 60px;
     height: 26px;
     outline: none;
-    border:1px solid #8763FB;
-    background: linear-gradient(to right, #6478FB, #8763FB, #38B9C0 );
+    border:1px solid black;
+    background: linear-gradient(to right, black, gray );
     color: wheat;
 }
 .freeboard-btn:hover{

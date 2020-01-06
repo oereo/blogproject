@@ -15,9 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls.static import static
+from django.conf import settings
 import blog.views
 import account.views
 import freeboard.views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,6 +28,7 @@ urlpatterns = [
     path('blog/<int:blog_id>', blog.views.detail, name = "detail"),
     path('blog/new/', blog.views.new, name = "new"),
     path('blog/create/', blog.views.create, name = "create"),
+   
     path('login/', account.views.login, name='login'),
     path('logout/', account.views.logout, name='logout'),
     path('signup/', account.views.signup, name='signup'),
@@ -43,4 +47,5 @@ urlpatterns = [
     path('deletecomment/<int:post_id>/<int:comment_id>', freeboard.views.deletecomment, name='deletecomment'),
     path('editpost/<int:post_id>', freeboard.views.editpost, name='editpost'),
     path('edit/<int:post_id>', freeboard.views.edit, name='edit'),
+    
 ]

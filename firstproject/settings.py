@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     'account.apps.AccountConfig',
     'freeboard.apps.FreeboardConfig',
+    
 ]
 
 MIDDLEWARE = [
@@ -121,3 +122,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES = [
+    os.path.join(BASE_DIR, 'blog', 'static')
+]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
