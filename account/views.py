@@ -29,15 +29,17 @@ def signup(request):
                 email = request.POST['email'],
                 
             )
-        user.profile.bio = request.POST['bio']
-        print( user.profile.bio)
+        user.profile.job = request.POST['job']
+        user.profile.location = request.POST['location']
+        print( user.profile.job)
+        print( user.profile.location)
         auth.login(request,user)
         return redirect('/')
     return render(request,'signup.html')
 
 def update_profile(request, user_id):
     user = User.objects.get(pk=user_id)
-    user.profile.bio = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit...'
+    user.profile.job = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit...'
     user.save()    
 
 def checkid(request):
