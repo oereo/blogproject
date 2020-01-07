@@ -1,4 +1,4 @@
-{% extends 'base2.html' %}
+{% extends 'base.html' %}
 {% block content %}
 <div class="board">
     <div class="lower-part">
@@ -71,7 +71,7 @@
                 {% endfor %}
                 </table>
             </div>
-            <div class="freeboard-search">
+            <div class="freeboard-search" style = "text-align: center">
                 <form method="POST" action="{% url 'freeboardSearch' %}">
                     {% csrf_token %}
                     <select id="" name='condition'>
@@ -82,7 +82,7 @@
                     <input type="text" class="freeboard-searchbox" name='input'><button class="freeboard-btn">검색</button>
                 </form>
             </div>
-            <div class="paginator">
+            <div class="paginator" style = "text-align: center">
                 {% if page_posts.has_previous %}
                     <a href="?page=1">First</a>
                     <a href="?page={{page_posts.previous_page_number}}">Previous</a>

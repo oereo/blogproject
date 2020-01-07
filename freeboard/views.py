@@ -7,7 +7,7 @@ from .models import Comment
 # Create your views here.
 def freeboard(request):
     posts = Post.objects.all().order_by('-id')
-    post_paginator = Paginator(posts, 15)
+    post_paginator = Paginator(posts, 10)
     page = request.GET.get('page')
     page_posts = post_paginator.get_page(page)
     return render(request, 'freeboard.html', {'page_posts' : page_posts})
