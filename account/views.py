@@ -37,6 +37,9 @@ def signup(request):
         return redirect('/')
     return render(request,'signup.html')
 
+def signup_1(request):
+    return render(request, 'signup_1.html')    
+
 def update_profile(request, user_id):
     user = User.objects.get(pk=user_id)
     user.profile.job = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit...'

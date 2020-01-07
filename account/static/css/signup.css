@@ -1,154 +1,5 @@
-/* .container-linkmoa-login{
-}
-.login-form, .signup-form {
-    margin: 0 auto;
-    padding: 5px;
-    max-width: 520px;
-    left: 50%;
-    width: 500px;
-    background-image: linear-gradient(to bottom,  white, white);
-    border-radius: 10px;
-    box-shadow: 0 0 5px 2px #0575E6;
-    letter-spacing: 0.5px;
-  }
-  .login-form {
-      top:430px;
-  }
-
-  .signup-form {
-      top:500px;
-  }
-
-  .signup-form h1{
-    text-align: center;
-    margin: 20px 0 35px 0;
-    color:  rgb(31,187,176);
-    text-shadow: 1px 3px rgba(255, 255, 255, 0.1);
-    font-family: Jua;
-    font-size: 40px;
-  }
-
-  .signupform-group {
-    margin: 2px 2px;
-    max-width: 100%;
-    min-height: 68px;
-    margin: 10px 0 0 0;
-    padding: 0 35px;
-    border-radius: 10px;
-    position: relative;
-  }
-  
-  .signupform-group input {
-    width: 100%;
-    box-sizing: border-box;
-    height: 38px;
-    padding: 0 12px;
-    font-size: 17px;
-    letter-spacing: 0.25px;
-    border-radius: 20px;
-    border: 1.5px solid rgb(31,187,176);
-    background-color: rgba(248,255,174, 0.2);
-    autocomplete: off;
-  }
-
-  .signupform-group input:active,
-  .signupform-group input:focus {
-    background-color: rgba(31,187,176, 0.2);
-    outline: none;
-    box-shadow: 0 0 2px 0 rgb(248, 255, 174);
-    border: 1.5px solid rgb(248, 255, 174);
-    color: gray;
-  }
-  
-  .signupform-group input::selection {
-    background-color: rgba(31,187,176);
-  }
-  
-  .signupform-group label{
-    pointer-events: none;
-    position: absolute;
-    margin: 0;
-    padding: 0 2px;
-    top: 9px;
-    left: 47px;
-    font-size: 16px;
-    color: black(230, 230, 230, 0.7);
-    transition: all 0.12s ease;
-  }
-  
-  .signupform-group input:focus + label,
-  .signupform-group input:not(:placeholder-shown) + label{
-    transform: translateY(-27px);
-    font-size: 14px;
-    font-weight: bold;
-    color: black;
-  }
-
-  
-  .error{
-    color: rgb(255, 102, 102);
-    margin: 3px 0px 0px 12px;
-    font-size: 12.5px;
-    display: none;
-    letter-spacing: 0px;
-  }
-  
-  .sign-input[type="submit"]{
-    display: block;
-    margin: -5px auto 10px auto;
-    width: 110px;
-    height: 45px;
-    border-radius: 25px;
-    font-size: 17px;
-    border: none;
-    text-transform: capitalize;
-    background-color: rgba(31,187,176, 0.8);
-    color: white;
-    cursor: auto;
-    outline: none;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  
-  .sign-input[type="submit"]:hover,
-  .sign-input[type="submit"]:focus{
-    background-color: #2991CF;
-    box-shadow: 0 0 2px 0px #2991CF;
-  }
-  
-  .signupform-bottom {
-    text-align: center;
-    margin: 15px 0;
-    font-size: 12px;
-    letter-spacing: 0.75px;
-  }
-  
-  .signupform-bottom a{
-    text-decoration: none;
-    color: #1FBBB0;
-  }
-  
-  .signupform-bottom a:hover,
-  .signupform-bottom a:focus{
-    color: #2991CF;
-    outline: none;
-  }
- 
-
-  .signup-form button{
-      border-radius: 20px;
-      outline: none;
-      border: 1px solid #38B9C0;
-      background-color: #38B9C0;
-      width: 100px;
-  }
-
-  .signup-form label{
-      margin-bottom: -40px;
-  } */
-
   html {
-    background-color: #56baed;
+    /* background-color: #56baed; */
   }
   
   body {
@@ -263,13 +114,13 @@
     background-color: #f6f6f6;
     border: none;
     color: #0d0d0d;
-    padding: 15px 32px;
+    padding: 10px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
     margin: 5px;
-    width: 85%;
+    width: 50%;
     border: 2px solid #f6f6f6;
     -webkit-transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
@@ -393,3 +244,10 @@
     width: 100%;
   }
   
+
+
+
+  /* 추가 css */
+  .signupform-group{
+    margin-bottom : 20px;
+  }

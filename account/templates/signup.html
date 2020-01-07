@@ -3,44 +3,71 @@
 <div class="line"></div>
 <form class="signup-form" method='POST' action="{% url 'signup' %}">
         {% csrf_token %}
-        <h1>회원가입</h1>
-        <label for="name">ID</label>
+        <div style = "text-align: center">
+          <br>
+          <h1>회원가입</h1>
+        </div>
+        <br>
+        <div class="progress" style = "margin-bottom : 0px;">
+          <div class="progress-bar" role="progressbar" style=" width: 66%; background-color : orange;" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+  
+        <table width=960px; >
+          <thead > 
+            <tr>
+              <th></th>
+              <th style = "text-align : center">이용약관</th>
+              <th style = "text-align : center">정보기입</th>
+              <th style = "text-align : center">가입완료</th>
+             </tr>
+          </thead>
+          
+        </table>
+        <br>
+     
+
         <div class="signupform-group">
+        <label for="name">ID</label>
         <input type="text" placeholder=" " id="username" required name="username" class="signupform-group-input"><button id = "checkid">중복확인</button>
         <div class="error">
           <i class="fas fa-exclamation-circle"></i>
           Error encountered!
         </div>
       </div>
-
-      <label for="job">직업</label>
+      
+      
       <div class="signupform-group">
+        <label for="job">직업</label>
         <input type="text" placeholder=" hey" id="job" required name="job">
       
       </div>
-      <label for="location">지역</label>
+      
       <div class="signupform-group">
+        <label for="location">지역</label>
         <input type="text" placeholder=" hey" id="location" required name="location">
       
       </div>
 
 
-      <label for="email">Email</label>
+      
       <div class="signupform-group">
+        <label for="email">Email</label>
         <input type="email" placeholder=" " id="email" required name="email">
         <div class="error">
           <i class="fas fa-exclamation-circle"></i>
         </div>
       </div>
-      <label for="password">Password</label>
+      
       <div class="signupform-group">
+        <label for="password">Password</label>
         <input type="password" placeholder=" " id="password" required name="password">
         <div class="error">
           <i class="fas fa-exclamation-circle"></i>
         </div>
       </div>
-      <label for="confirm">Confirm</label>
+     
       <div class="signupform-group">
+        <label for="confirm">Confirm</label>
         <input type="password" placeholder=" " id="confirm" required name="password_confirm">
         <div class="error">
           <i class="fas fa-exclamation-circle"></i>
