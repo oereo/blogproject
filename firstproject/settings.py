@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     'account.apps.AccountConfig',
     'freeboard.apps.FreeboardConfig',
-    
+    'postboard.apps.PostboardConfig',
 ]
 
 MIDDLEWARE = [
