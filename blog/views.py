@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.core.paginator import Paginator
 from django.utils import timezone
 from .models import Blog
+from .models import Comment
 from django.contrib.auth.models import User
 from django.contrib import auth
 
@@ -10,7 +11,7 @@ from django.contrib import auth
 def home(request):
     blogs = Blog.objects #쿼리셋 - 전달받은 객체 #메소드
     blog_list = Blog.objects.all()
-    paginator = Paginator(blog_list, 3)
+    paginator = Paginator(blog_list, 8)
     page = request.GET.get('page')
     posts = paginator.get_page(page)
     return render(request, 'home.html', {'blogs': blogs, 'posts' : posts})
@@ -33,9 +34,10 @@ def create(request):
     blog.pub_date = timezone.datetime.now()
     blog.save()
     return redirect('/blog/'+str(blog.id))
-    # return redirect('null')
-    # return render(request, 'home.html')
+    return redirect('null')
+    return render(request, 'home.html')
     # 입력받은 내용을 데이터 베이스에 넣어주는 함수
+
 
 def mypage(request):
     user = request.user

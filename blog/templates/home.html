@@ -9,6 +9,39 @@
     </div>
   </div> -->
 
+
+  {% for blog in posts %}
+  <div>{{blog.title}}</div>
+  <div>{{blog.pub_date}}</div>
+  <div>{{blog.body}}</div>
+  <br>
+
+  {% endfor %}
+
+              <!-- {% for blog in page_blogs %}
+                <tr class="free-board-post">
+                    <td class="post-num">{{blog.Id}}</td>
+                    <td class="post-title"><a href="{% url 'detail' post.id %}">{{blog.title}}</a></td>
+                    <td class="post-writer">{{blog.own}}</td>
+                    <td class="post-views">{{blog.views}}</td>
+                </tr>
+                {% endfor %} -->
+
+                {% if page_posts.has_previous %}
+                    <a href="?page=1">First</a>
+                    <a href="?page={{page_posts.previous_page_number}}">Previous</a>
+                {% endif %}
+                    <span>{{page_posts.number}}</span>
+                    <span>of<span>
+                    <span>{{page_posts.paginator.num_pages}}</span>
+        
+                {% if page_posts.has_next %}
+                    <a href="?page={{page_posts.next_page_number}}">Next</a>
+                    <a href="?page={{page_posts.paginator.num_pages}}">Last</a>
+                {% endif %}
+
+
+  <br>
   <hr>
   <div class="row mb-2">
     <div class="col-md-6">
