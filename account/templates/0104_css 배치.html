@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Bin</title>
+    <style>
+        header ,footer
+        {
+            background-color: #ccc;
+
+        }
+        li
+        {
+            list-style:none;
+        }
+        .content
+        {
+         
+            margin: 20px 0px;
+            overflow:auto;
+
+        }
+        .left,.mid,.right
+        {
+            float:left;
+            height:200px;
+        }
+        .left
+        {background-color: #77c;
+        margin-right:3%;
+            width:20%;
+
+        }
+        .mid
+        {background-color: #77c;
+            width:40%;
+        }    
+        .right
+        {background-color: #77c;
+            margin-left:3%;
+            width:20%;
+        }
+        .right > h2
+        {
+            position:relative;
+            
+        }
+        .right .emoticon
+        {
+            position:absolute;
+            top:0px;
+            right:5%;
+            color:#fff;
+        }
+        footer{
+            clear:left;
+        }
+    </style>
+</head>
+
+<body>
+    <header> 부스트 코스는 정말 유익합니다</header>
+    <div class='content'>
+        <ul class='left'>
+          <li>왼쪽 첫번째 </li>
+          <li>왼쪽 두번째 </li>   
+          <li>왼쪽 세번째 </li>   
+          <li>왼쪽 네번째 </li>      
+        </ul>
+
+        <ul class= 'mid'>
+            <li>중간 첫번째 </li>
+            <li>중간 두번째 </li>   
+            <li>중간 세번째 </li>   
+            <li>중간 네번째 </li>      
+        </ul>
+        <ul class= 'right'>
+            <h2><span class='emoticon'>:)</span></h2> 
+            <li>오른쪽 첫번째 </li>
+            <li>오른쪽 두번째 </li>   
+            <li>오른쪽 세번째 </li>   
+            <li>오른쪽 네번째 </li>      
+        </ul>
+
+    </div>
+    <footer> @copyright hoseol</footer>
+</body>
+</html>
