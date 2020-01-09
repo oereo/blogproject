@@ -2,6 +2,8 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.core.paginator import Paginator
 from django.utils import timezone
 from .models import Blog
+from django.contrib.auth.models import User
+from django.contrib import auth
 
 # Create your views here.
 
@@ -34,5 +36,12 @@ def create(request):
     # return redirect('null')
     # return render(request, 'home.html')
     # 입력받은 내용을 데이터 베이스에 넣어주는 함수
+
+def mypage(request):
+    user = request.user
+    user_job=user.profile.job
+    user_loc=user.profile.location
+    user_name=user.username
+    return render(request, 'mypage.html', {'name':user_name,'job':user_job, 'location':user_loc})
 
 
