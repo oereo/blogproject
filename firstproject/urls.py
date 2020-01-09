@@ -30,11 +30,13 @@ urlpatterns = [
     path('blog/create/', blog.views.create, name = "create"),
     path('mypage', blog.views.mypage, name='mypage'),
    
+    path('assign/', account.views.assign, name='assign'),
     path('login/', account.views.login, name='login'),
     path('logout/', account.views.logout, name='logout'),
     path('signup/', account.views.signup, name='signup'),
     path('signup/checkid/', account.views.checkid, name='checkid'),
     path('signup_1', account.views.signup_1 ,name = 'signup_1'),
+     path('activate/<str:uid64>/<str:token>/', account.views.activate, name='activate'),
     
     # 게시판
     path('freeboard', freeboard.views.freeboard, name='freeboard'),
