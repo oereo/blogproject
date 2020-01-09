@@ -1,13 +1,33 @@
 {% extends 'accounts_base.html' %}
 {% block content %}
-<div class="line"></div>
-<form class="signup-form" method='POST' action="{% url 'signup' %}">
-        {% csrf_token %}
-        <div style = "text-align: center">
-          <br>
-          <h1>회원가입</h1>
-        </div>
-        <br>
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+
+    <title>Signin Template for Bootstrap</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sign-in/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="signin.css" rel="stylesheet">
+  </head>
+
+  <body class="text-center">
+    <form class="signup-form" method='POST' action="{% url 'signup' %}">
+      {% csrf_token %}
+      <h1 class="h3 mb-3 font-weight-normal">Please sign up</h1>
+
+      <br>
         <div class="progress" style = "margin-bottom : 0px;">
           <div class="progress-bar" role="progressbar" style=" width: 66%; background-color : orange;" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
@@ -23,61 +43,37 @@
           </thead>
           
         </table>
+               
         <br>
-     
-
-        <div class="signupform-group">
-        <label for="name">ID</label>
-        <input type="text" placeholder=" " id="username" required name="username" class="signupform-group-input"><button id = "checkid">중복확인</button>
-        <div class="error">
-          <i class="fas fa-exclamation-circle"></i>
-          Error encountered!
-        </div>
-      </div>
-      
-      
-      <div class="signupform-group">
-        <label for="job">직업</label>
-        <input type="text" placeholder=" hey" id="job" required name="job">
-      
-      </div>
-      
-      <div class="signupform-group">
-        <label for="location">지역</label>
-        <input type="text" placeholder=" hey" id="location" required name="location">
-      
-      </div>
+      <label for="inputEmail" class="sr-only">user id</label>
+      <input type="text"  id="username" required name="username" class="form-control" placeholder="User Id"><button id = "checkid">중복확인</button><br>
+      <label for="inputPassword" class="sr-only">job</label>
+      <input type="text" id="job" required name="job" class="form-control" placeholder="Job"><br>
+      <label for="inputPassword" class="sr-only">location</label>
+      <input type="text"  id="location" required name="location" class="form-control" placeholder="Location you live"><br>
+      <label for="inputPassword" class="sr-only">Email</label>
+      <input type="email"  id="email" required name="email" class="form-control" placeholder="Email"><br>
+      <label for="inputPassword" class="sr-only">Password</label>
+      <input type="password" id="password" class="form-control" name="password" placeholder="password" required><br>
+      <label for="inputPassword" class="sr-only">Password Confirm</label>
+      <input type="password" id="confirm" class="form-control" name="password_confirm" placeholder="password confirm" required><br>
 
 
-      
-      <div class="signupform-group">
-        <label for="email">Email</label>
-        <input type="email" placeholder=" " id="email" required name="email">
-        <div class="error">
-          <i class="fas fa-exclamation-circle"></i>
-        </div>
-      </div>
-      
-      <div class="signupform-group">
-        <label for="password">Password</label>
-        <input type="password" placeholder=" " id="password" required name="password">
-        <div class="error">
-          <i class="fas fa-exclamation-circle"></i>
-        </div>
-      </div>
-     
-      <div class="signupform-group">
-        <label for="confirm">Confirm</label>
-        <input type="password" placeholder=" " id="confirm" required name="password_confirm">
-        <div class="error">
-          <i class="fas fa-exclamation-circle"></i>
-        </div>
-      </div>
-      <input type="submit" value="Sign Up" class="sign-input">
-      <div class="form-bottom">
-        <a href="#">Forgot Password?</a>
-      </div>
+      <button class="btn btn-lg btn-primary btn-block" type="submit" value="Sign Up"  style=" background-color : orange;">Sign Up</button>
+      <p class="mt-5 mb-3 text-muted">&copy; 2020</p>
     </form>
+
+
+
+  </body>
+</html>
+
+
+
+
+<!--  -->
+<div class="line"></div>
+
     <script>
       $(function(){
         $('#checkid').click(function(){
