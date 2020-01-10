@@ -25,7 +25,7 @@ import freeboard.views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', blog.views.home, name = "home"),
-    path('blog/<int:blog_id>', blog.views.detail, name = "detail"),
+    path('blog/<int:blog_id>', blog.views.detail_blog, name = "detail_blog"),
     path('blog/new/', blog.views.new, name = "new"),
     path('blog/create/', blog.views.create, name = "create"),
     path('mypage', blog.views.mypage, name='mypage'),

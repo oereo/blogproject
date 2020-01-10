@@ -23,12 +23,12 @@ from datetime import datetime
 #         return self.text
 
 class Blog(models.Model):
-    Id = models.IntegerField()
-    # owner = models.CharField(max_length=20, default="???")
+    user_id = models.IntegerField()
+    owner = models.CharField(max_length=20, default="???")
     title = models.CharField(max_length=200)
     pub_date = models.DateTimeField('date_published')
     body = models.TextField()
-    # views = models.IntegerField(default=0)
+    views = models.IntegerField(default=0)
 
     def __str__(self):
         return self.title

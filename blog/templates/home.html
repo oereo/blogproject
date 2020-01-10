@@ -8,36 +8,31 @@
       <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p>
     </div>
   </div> -->
+  <button class="createbtn"onclick="location.href='{% url 'new' %}'">글쓰기</button>
 
-
-  {% for blog in posts %}
-  <div>{{blog.title}}</div>
+  {% for blog in page_blogs %}
+  {{blog.id}}
+  {{blog.owner}}
+  <p>{{blog.title}}<a href = "{% url 'detail_blog' blog.id %}">.pp</a></p>
   <div>{{blog.pub_date}}</div>
-  <div>{{blog.body}}</div>
+  
+  
   <br>
 
   {% endfor %}
 
-              <!-- {% for blog in page_blogs %}
-                <tr class="free-board-post">
-                    <td class="post-num">{{blog.Id}}</td>
-                    <td class="post-title"><a href="{% url 'detail' post.id %}">{{blog.title}}</a></td>
-                    <td class="post-writer">{{blog.own}}</td>
-                    <td class="post-views">{{blog.views}}</td>
-                </tr>
-                {% endfor %} -->
 
-                {% if page_posts.has_previous %}
+                {% if page_blogs.has_previous %}
                     <a href="?page=1">First</a>
-                    <a href="?page={{page_posts.previous_page_number}}">Previous</a>
+                    <a href="?page={{page_blogs.previous_page_number}}">Previous</a>
                 {% endif %}
-                    <span>{{page_posts.number}}</span>
+                    <span>{{page_blogs.number}}</span>
                     <span>of<span>
-                    <span>{{page_posts.paginator.num_pages}}</span>
+                    <span>{{page_blogs.paginator.num_pages}}</span>
         
-                {% if page_posts.has_next %}
-                    <a href="?page={{page_posts.next_page_number}}">Next</a>
-                    <a href="?page={{page_posts.paginator.num_pages}}">Last</a>
+                {% if page_blogs.has_next %}
+                    <a href="?page={{page_blogs.next_page_number}}">Next</a>
+                    <a href="?page={{page_blogs.paginator.num_pages}}">Last</a>
                 {% endif %}
 
 

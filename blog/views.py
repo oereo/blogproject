@@ -10,32 +10,36 @@ from django.contrib import auth
 
 def home(request):
     blogs = Blog.objects #쿼리셋 - 전달받은 객체 #메소드
-    blog_list = Blog.objects.all()
-    paginator = Paginator(blog_list, 8)
+    blog_list = Blog.objects.all().order_by('-id')
+    paginator = Paginator(blog_list, 3)
     page = request.GET.get('page')
-    posts = paginator.get_page(page)
-    return render(request, 'home.html', {'blogs': blogs, 'posts' : posts})
+    page_blogs = paginator.get_page(page)
+    return render(request, 'home.html', {'page_blogs' : page_blogs})
 
 
     # 쿼리셋과 메소드의 형식
     # 모델.쿼리셋(objects).메소드
-def detail(request, blog_id):
+def detail_blog(request, blog_id):
     blog_detail = get_object_or_404(Blog, pk = blog_id)
+    blog_detail.increaseViews()
 
-    return render(request, 'detail.html', {'blog':blog_detail})
+    return render(request, 'detail_blog.html', {'blog_detail':blog_detail})
 
 def new(request):
     return render(request, 'new.html')
 
 def create(request):
+    user = request.user
     blog = Blog()
+    blog.user_id = user.id
+    blog.owner = user.username
     blog.title = request.GET['title']
     blog.body = request.GET['body']
     blog.pub_date = timezone.datetime.now()
     blog.save()
-    return redirect('/blog/'+str(blog.id))
-    return redirect('null')
-    return render(request, 'home.html')
+    # return redirect('/blog/'+str(blog.id))
+    return redirect('home')
+   
     # 입력받은 내용을 데이터 베이스에 넣어주는 함수
 
 
