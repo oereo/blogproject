@@ -3,7 +3,7 @@
 
 
 <br><br>
-<form method="POST" action="{% url 'assign' %}">
+<form name = Join method="POST" action="{% url 'assign' %}" onSubmit="return CheckForm(this)">
   {% csrf_token %}
   <div style = "text-align: center">
     <br>
@@ -112,7 +112,7 @@
                <tr>
                  <td>
                    <br>
-                   <input type="checkbox" name='agree_a'>이용약관에 동의합니다.<br><br><br><br>
+                   <input type="checkbox" id = "agree_a" name="agree_a">이용약관에 동의합니다.<br><br><br><br>
                  </td>
                </tr>
   
@@ -297,15 +297,36 @@
     <tr>
       <td>
         <br>
-        <input type="checkbox" name= 'agree_b'>개인정보 수집 및 이용에 대한 안내에 동의합니다.
+        <input type="checkbox" id = "agree_b" name= 'agree_b'>개인정보 수집 및 이용에 대한 안내에 동의합니다.
       </td>
     </tr>
   </table>
   <br>
 
-  <button type = "submit"  class="btn_order" style="margin:10px; color : black;">다 음</button>
+  <input type = "submit" value = "전송"class="btn_order" style="margin:10px; color : black;" >다 음
 </form>
  
-<a href="/"> <button type = "button"  class="btn_cancel1" style="margin:10px;color : black;">취 소</button></a>
+<a href="/"> <button type = "button"  class="btn_cancel1" style="margin:10px;color : black;" >취 소</button></a>
+
+<script>
+ 
+    function CheckForm(Join){ 
+      var msg = "약관에 동의해주십시오"
+      
+      var chk1 = document.Join.agree_a.checked;
+      var chk2 = document.Join.agree_b.checked;
+
+      if(chk1 == ""){
+        alert("약관에 동의해주세요");
+        return false;
+      }
+      if(chk2 == ""){
+        alert("약관에 동의해주세요");
+        return false;
+      }
+     
+    }
+
+  </script>
 
 {% endblock %}

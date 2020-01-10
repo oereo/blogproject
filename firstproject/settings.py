@@ -13,10 +13,10 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'wjsghtjf@gmail.com' # ex) bum752@gmail.com
-EMAIL_HOST_PASSWORD = 'fkausWkd!96' # ex) P@ssw0rd
-SERVER_EMAIL = 'wjsghtjf@gmail.com' # ex) bum752@gmail.com
-DEFAULT_FROM_MAIL = 'wjsghtjf'
+EMAIL_HOST_USER = 'dlstpgns0406@gmail.com' # ex) bum752@gmail.com
+EMAIL_HOST_PASSWORD =  'tpgns5974!'# ex) P@ssw0rd
+SERVER_EMAIL = 'dlstpgns0406@gmail.com' # ex) bum752@gmail.com
+DEFAULT_FROM_MAIL = 'dlstpgns'
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
