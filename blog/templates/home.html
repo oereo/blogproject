@@ -102,16 +102,36 @@
   </div>
 </div>
 
+<p> <a class="btn btn-primary" href="{% url 'upload'%}" method="POST" enctype="multipart/form-data">업로드</a></p>
 
-   
-
- 
+  {% for image in user_ %}
+  <div class="panel panel-default" align="center">
+    <div class="panel-heading"><h4>{{photo.owner.username}}</h4></div>
+    <div class="panel-body">
+      {% if photo.image.width > 800 %}
+      <p><img src = '{{photo.image.url}}' width='600' /> <br>
+        {% else %}
+        <p><img src = '{{photo.image.url}}' /> <br>
+          {% endif %}
+          {{photo.comment}}</p>
+      </div>
+    </div>
+      {% endfor %}
+     
+      <h4>업로드하세요!</h4>
+        
+     
+     
+<div>
+      <img style = "width : 120px; height : 120px;" src="/media/blog/2020/01/11/2020-01-02_213141_j3KJVZK.PNG">
+    </div>
+    <img src = "/media/blog/photos.image/2/"></img>
 </main><!-- /.container -->
 
 <footer class="blog-footer">
   <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
   <p>
-    <a href="#">Back to top</a>
+    <a href="{% url 'upload' %}">Back to top</a>
   </p>
 </footer>
 </body>

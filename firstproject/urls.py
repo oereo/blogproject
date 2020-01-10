@@ -22,10 +22,13 @@ import account.views
 import freeboard.views
 
 
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', blog.views.home, name = "home"),
     path('blog/<int:blog_id>', blog.views.detail_blog, name = "detail_blog"),
+    path('upload/', blog.views.upload, name = "upload"),
     path('blog/new/', blog.views.new, name = "new"),
     path('blog/create/', blog.views.create, name = "create"),
     path('mypage', blog.views.mypage, name='mypage'),
@@ -53,3 +56,5 @@ urlpatterns = [
     path('edit/<int:post_id>', freeboard.views.edit, name='edit'),
     
 ]
+
+urlpatterns += static(settings.MEDIA_URL,document_root = settings.MEDIA_ROOT)

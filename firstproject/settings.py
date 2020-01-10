@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'account.apps.AccountConfig',
     'freeboard.apps.FreeboardConfig',
     
+    
 ]
 
 MIDDLEWARE = [
@@ -135,3 +136,7 @@ STATICFILES = [
 ]
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
