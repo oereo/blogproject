@@ -51,6 +51,23 @@
   }
   
  
-  
-  
+  .panel  {
+    position : relative;
+    display : inline-table;
+    width : 200px;
+    height : 200px;
+  }
 
+  .panel-body{
+    width : 150px;
+    height : 150px;
+  }
+   
+  .panel-body img{
+    width : 150px;
+    
+  }
+
+  .card-img-top{
+    height : 120px;
+  }
