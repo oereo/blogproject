@@ -18,11 +18,15 @@ def home(request):
         paginator = Paginator(blog_list, 3)
         page = request.GET.get('page')
         page_blogs = paginator.get_page(page)
-        imagePost= Photo.objects.all()
+        page1 = request.GET.get('page1')
+        
+        imagePost= Photo.objects.all().order_by('-id')
+        photo_paginator = Paginator(imagePost, 3)
+        page_photo = photo_paginator.get_page(page1)
         if user.is_staff == True:   
-            return render(request, 'home.html', {'page_blogs' : page_blogs, 'imagePost':imagePost})
+            return render(request, 'home.html', {'page_blogs' : page_blogs, 'imagePost':imagePost, 'page_photo' : page_photo})
         else:
-            return render(request, 'home_user.html', {'page_blogs' : page_blogs, 'imagePost':imagePost})    
+            return render(request, 'home_user.html', {'page_blogs' : page_blogs, 'imagePost':imagePost ,'page_photo' : page_photo})    
    
 
 
@@ -34,6 +38,12 @@ def detail_blog(request, blog_id):
     blog_detail.increaseViews()
 
     return render(request, 'detail_blog.html', {'blog_detail':blog_detail})
+
+def detail_post(request, post_id):
+    post_detail = get_object_or_404(Blog, pk = post_id)
+    post_detail.increaseViews()
+
+    return render(request, 'detail_post.html', {'post_detail':post_detail})
 
 def new(request):
     return render(request, 'new.html')
@@ -68,6 +78,10 @@ def mypage(request):
         user_name=user.username
         return render(request, 'staff_page.html', {'name':user_name,'job':user_job, 'location':user_loc, 'user_data':users})
 
+def postpage(request):
+    user = request.user
+    imagePost= Photo.objects.all().order_by('-pub_date')
+    return render(request, 'postpage.html', {'imagePost' : imagePost})
 
 def upload(request):
    
@@ -98,4 +112,5 @@ class HomeView(ListView):
 
     def get_queryset(self):
         user = self.request.user    # 로그인되어있는 사용자
-        return user.photo_set.all().order_by('-pub_date')
+        return user.photo_set.all().order_by('pub_date')
+

@@ -12,7 +12,7 @@
  
   <hr>
   <div class = "container">
-      <h3>공지사항</h3>
+      <h3>알림사항</h3>
      
   <table class = "table table-hover">
    <thead>
@@ -32,13 +32,15 @@
         <td id = "blog_title">{{blog.owner}}</td>
         <td id = "blog_date">{{blog.pub_date}}</td>
         <td id = "blog_view">{{blog.views}}</td>
+      
      </tr>
      {% endfor %}
    </tbody>
   
 </table>
 <button class="createbtn"onclick="location.href='{% url 'new' %}'">글쓰기</button>
-    <div class = "page">
+
+<div class = "page">
                   {% if page_blogs.has_previous %}
                       <a href="?page=1">First</a>
                       <a href="?page={{page_blogs.previous_page_number}}">Previous</a>
@@ -102,12 +104,15 @@
   </div>
 </div> -->
 
-<p> <a class="btn btn-primary" href="{% url 'upload'%}" method="POST" enctype="multipart/form-data">업로드</a></p>
+<div class = "container">
+<h3>소식</h3>
+<p> <a class="btn btn-primary" href="{% url 'upload'%}" method="POST" enctype="multipart/form-data" style = "background-color : orange; border-color : orange">업로드</a> <a class="btn btn-primary" href = "{% url 'postpage' %}" style = "background-color : orange; border-color : orange">더보기</a></p>
 
-  {% for post in imagePost%}
+  {% for post in page_photo%} <!--imagePost -->
   <div class="panel panel-default" align="center">
-    <div class="panel-heading"><h4>{{post.owner.username}}</h4></div>
-    <div class="panel-body">
+      {{post.id}}
+    <div class="panel-heading"><h4><a href = "{% url 'detail_post' post.id %}">{{post.owner.username}}</a></h4></div>
+    <div class="panel-body" align = "center">
       <img class="card-img-top" src="{{post.image.url }}" alt=" Card image cap">
       
           {{post.comment}}
@@ -116,15 +121,10 @@
       {% endfor %}
       
 </div>
-      <h4>게시판을 업로드하세요!</h4>
-        
-     
-     
-<div>
    
-
+</div>
 <footer class="blog-footer">
-  
+  sdddd
 </footer>
 </body>
 </html>

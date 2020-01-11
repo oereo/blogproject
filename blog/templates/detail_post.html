@@ -1,0 +1,7 @@
+{% extends 'base.html'%}
+{%block content%}
+    {{post_detail.id}}
+    글쓴이 : {{post.owner.username}}
+    
+    {{post_detail.comment}}
+{% endblock %}

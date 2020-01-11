@@ -1,0 +1,18 @@
+{% extends 'base.html'%}
+{%block content%}
+<br>
+<hr>
+<br>
+<div class = "container">
+{% for post in imagePost %}
+    <div class="panel panel-default" align="center">
+            <div class="panel-heading"><h4>{{post.owner.username}}</h4></div>
+            <div class="panel-body" align = "center">
+            <img class="card-img-top" src="{{post.image.url }}" alt=" Card image cap">
+            
+                {{post.comment}}
+            </div>
+            </div>
+            {% endfor %}
+        </div>
+{% endblock %}
