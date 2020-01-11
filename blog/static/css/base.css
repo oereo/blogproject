@@ -1,20 +1,56 @@
-#Menu ul li{
-    float : left;
-    vertical-align : middle;
-    text-align : center;
-    background-color : orange;
-    color : white;
 
-}
+.padding{
+    padding-top: 5px;
+  }
+  
+ nav {
+   
+    width: calc(100% - 60px);
+    margin: 0 auto;
+    padding: 0px 0;
+    background: #333;
+    z-index: 1;
+    text-align: right;
+    padding-right: 2%;
 
-#navbar .menu{
-    color : white;
-    display : block;
-    width : 300px;
-    font-size : 12px;
-}
-.page{
-    float : center;
-    text-align: center;
-}
+  }
+  
+  .logo {
+    width: 15%;
+    float: left;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 30px;
+    text-align: left;
+    padding-left: 2%;
+  }
+  
+  .menu-area li {
+    display: inline-block;
+  }
+  
+  .menu-area a {
+    color: orange;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: block;
+    padding: 0 25px;
+    font-size: 22px;
+    line-height: 50px;
+    position: relative;
+    z-index: 1;
+  }
+  .menu-area a:hover {
+    background: orange;
+    color: #fff;
+  }
+  
+  .menu-area a:hover:after {
+    transform: translateY(-50%) rotate(-35deg);
+  }
+  
+ 
+  
+  
 

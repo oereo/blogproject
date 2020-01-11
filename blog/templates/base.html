@@ -90,15 +90,27 @@
       </div>
     </div>
   </header>
-
-  <div class="nav-scroller py-1 mb-2">
+  <div class="padding">
+    <nav>
+      <div class="logo">Logo</div>
+  
+      <ul class="menu-area">
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="#">소개</a></li>
+        <li><a href="{% url 'freeboard' %}">자유게시판</a></li>
+        <li><a href="{% url 'mypage' %}">MyPage</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+  <!-- <div class="nav-scroller py-1 mb-2">
     <nav class="nav d-flex justify-content-between">
       <a class="p-2 text-muted" href= "{% url 'freeboard' %}">게시판</a>
       <a class="blog-header-logo text-dark" href="{% url 'home' %}">HOME</a>
       <a class="text-muted" href="#">Subscribe</a>
       <a class="text-muted" href="{% url 'mypage' %}">Mypage</a>
     </nav>
-  </div>
+  </div> -->
 <hr>
   <div class="container">
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
