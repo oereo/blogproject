@@ -1,7 +1,7 @@
 {% extends 'base.html'%}
 {%block content%}
     {{post_detail.id}}
-    글쓴이 : {{post.owner.username}}
-    
+    글쓴이 : {{post_detail.owner.username}}
+    <img class="card-img-top" src="{{post_detail.image.url }}" alt=" Card image cap">
     {{post_detail.comment}}
 {% endblock %}

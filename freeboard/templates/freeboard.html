@@ -17,7 +17,9 @@
                 {% elif request.path == '/freeboard/sort' %}
                     <button class="createbtn"onclick="location.href='{% url 'freeboard' %}'">원래대로</button>
                 {% endif %}
+                {% if err == 0 %}
                 <button class="createbtn"onclick="location.href='{% url 'newpost' %}'">글쓰기</button>
+                {% endif %}
             </div>
             <div class="board-contents">
                 <table>

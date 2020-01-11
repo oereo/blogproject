@@ -40,8 +40,8 @@ def detail_blog(request, blog_id):
     return render(request, 'detail_blog.html', {'blog_detail':blog_detail})
 
 def detail_post(request, post_id):
-    post_detail = get_object_or_404(Blog, pk = post_id)
-    post_detail.increaseViews()
+    post_detail = get_object_or_404(Photo, pk = post_id)
+    
 
     return render(request, 'detail_post.html', {'post_detail':post_detail})
 

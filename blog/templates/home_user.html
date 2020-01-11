@@ -101,18 +101,24 @@
     </div>
   </div>
 </div> -->
-  {% for post in imagePost%}
-  <div class="panel panel-default" align="center">
-    <div class="panel-heading"><h4>{{post.owner.username}}</h4></div>
-    <div class="panel-body">
-      <img class="card-img-top" src="{{post.image.url }}" alt=" Card image cap">
-      
-          {{post.comment}}
+<div class = "container">
+  <h3>소식</h3>
+  <a class="btn btn-primary" href = "{% url 'postpage' %}" style = "background-color : orange; border-color : orange">더보기</a></p>
+  
+    {% for post in page_photo%} <!--imagePost -->
+    <div class="panel panel-default" align="center">
+       
+      <div class="panel-heading"><h4><a href = "{% url 'detail_post' post.id %}">{{post.owner.username}}</a></h4></div>
+      <div class="panel-body" align = "center">
+        <img class="card-img-top" src="{{post.image.url }}" alt=" Card image cap">
+        
+            {{post.comment}}
+        </div>
       </div>
-    </div>
-      {% endfor %}
+        {% endfor %}
+        
+  </div>
       
-</div>   
 
 </main><!-- /.container -->
 
