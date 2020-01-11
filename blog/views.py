@@ -3,6 +3,7 @@ from django.core.paginator import Paginator
 from django.utils import timezone
 from .models import Blog
 from .models import Comment
+from .models import Photo
 from django.contrib.auth.models import User
 from django.contrib import auth
 from .forms import UploadForm
@@ -11,12 +12,19 @@ from django.views.generic.list import ListView
 # Create your views here.
 
 def home(request):
-    blogs = Blog.objects #쿼리셋 - 전달받은 객체 #메소드
-    blog_list = Blog.objects.all().order_by('-id')
-    paginator = Paginator(blog_list, 3)
-    page = request.GET.get('page')
-    page_blogs = paginator.get_page(page)
-    return render(request, 'home.html', {'page_blogs' : page_blogs})
+        user = request.user
+        blogs = Blog.objects #쿼리셋 - 전달받은 객체 #메소드
+        blog_list = Blog.objects.all().order_by('-id')
+        paginator = Paginator(blog_list, 3)
+        page = request.GET.get('page')
+        page_blogs = paginator.get_page(page)
+        imagePost= Photo.objects.all()
+        if user.is_staff == True:   
+            return render(request, 'home.html', {'page_blogs' : page_blogs, 'imagePost':imagePost})
+        else:
+            return render(request, 'home_user.html', {'page_blogs' : page_blogs, 'imagePost':imagePost})    
+   
+
 
 
     # 쿼리셋과 메소드의 형식
@@ -47,10 +55,18 @@ def create(request):
 
 def mypage(request):
     user = request.user
-    user_job=user.profile.job
-    user_loc=user.profile.location
-    user_name=user.username
-    return render(request, 'mypage.html', {'name':user_name,'job':user_job, 'location':user_loc})
+    if user.is_staff == False:
+        user_job=user.profile.job
+        user_loc=user.profile.location
+        user_name=user.username
+        email=user.email
+        return render(request, 'mypage.html', {'name':user_name,'job':user_job, 'location':user_loc, 'email':email})
+    else:
+        users =  User.objects.all()
+        user_job=user.profile.job
+        user_loc=user.profile.location
+        user_name=user.username
+        return render(request, 'staff_page.html', {'name':user_name,'job':user_job, 'location':user_loc, 'user_data':users})
 
 
 def upload(request):

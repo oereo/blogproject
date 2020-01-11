@@ -43,7 +43,7 @@
                         <td class="comment-text">{{c.text}}</td>
                         {% if c.author == user.username %}
                         <td class="comment-delete"><button class="btn-plus i-btn"onclick="
-                            var a= confirm('댓글을 삭제하시겠습니까?'); console.log(a); if(a==true){location.href='{% url 'deletecomment' post.id c.id %}'}"><i class="fa fa-times"></i></button></td>
+                            var a= confirm('댓글을 삭제하시겠습니까?'); console.log(a); if(a==true){location.href='{% url 'deletecomment' post.id c.id %}'}"><i class="fa fa-times"></i>삭제하기</button></td>
                         {% endif %}
                     </tr>
                     {% endfor %}
