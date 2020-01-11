@@ -28,53 +28,57 @@ def login(request):
         return render(request,'login.html')
 
 def signup(request):
-    if request.method == "POST":
+    if request.method == "POST":     
         if request.POST['password'] == request.POST['password_confirm']:
-            user = User.objects.create_user(
-                request.POST['username'],
-                password = request.POST['password'],
-                email = request.POST['email'],
-                
-            )
-        user.profile.job = request.POST['job']
-        user.profile.location = request.POST['location']
-        user.is_active = False
-        user.save()
-        print( user.profile.job)
-        print( user.profile.location)
+                err=0
+                user = User.objects.create_user(
+                    request.POST['username'],
+                    password = request.POST['password'],
+                    email = request.POST['email'],
+                    
+                )
+                user.profile.job = request.POST['job']
+                user.profile.location = request.POST['location']
+                user.is_active = False
+                user.save()
+                print( user.profile.job)
+                print( user.profile.location)
 
-        current_site = get_current_site(request) 
-            # localhost:8000
-        message = render_to_string('user_activate_email.html',{
-                'user': user,
-                'domain': current_site.domain,
-                'uid': urlsafe_base64_encode(force_bytes(user.pk)).decode(),
-                # 'uid': urlsafe_base64_encode(force_bytes(user.pk)).encode().decode(),
-                'token': account_activation_token.make_token(user),
-             })
-        print(message)
-        # auth.login(request,user)
-        mail_subject = "[정치판] 회원가입 인증 메일입니다."
-        user_email = user.email
-        email = EmailMessage(mail_subject, message, to=[user_email])
-        email.send()
-        return render(request,'assignment.html')
+                current_site = get_current_site(request) 
+                    # localhost:8000
+                message = render_to_string('user_activate_email.html',{
+                        'user': user,
+                        'domain': current_site.domain,
+                        'uid': urlsafe_base64_encode(force_bytes(user.pk)).decode(),
+                        # 'uid': urlsafe_base64_encode(force_bytes(user.pk)).encode().decode(),
+                        'token': account_activation_token.make_token(user),
+                    })
+                print(message)
+                # auth.login(request,user)
+                mail_subject = "[정치판] 회원가입 인증 메일입니다."
+                user_email = user.email
+                email = EmailMessage(mail_subject, message, to=[user_email])
+                email.send()
+                return render(request,'assignment.html')
 
-            # return redirect('account:home')
-    # return render(request, 'account/signup.html')
-      
-        return redirect('/')
+                # return redirect('account:home')
+        # return render(request, 'account/signup.html')
+        else:
+            err=1
+            return render(request, 'signup.html',{'err' : err})
 
     return render(request, 'signup.html')
 
 def assign(request):
+    err=0
     if not request.POST.get('agree_a', None) == None:
      if not request.POST.get('agree_b', None) == None:
-      return render(request, 'signup.html')
+      return redirect('signup')
      else:
       return render(request, 'signup_1.html')
     else:
      return render(request, 'signup_1.html')
+
 
 
 
