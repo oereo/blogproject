@@ -25,7 +25,7 @@
   <body class="text-center">
     <form class="signup-form" method='POST' action="{% url 'signup' %}">
       {% csrf_token %}
-      <h1 class="h3 mb-3 font-weight-normal">Please sign up</h1>
+    
 
       <br>
         <div class="progress" style = "margin-bottom : 0px;">
@@ -45,21 +45,27 @@
         </table>
                
         <br>
+      <center>
+       <div style="width:500px; background-color:rgba(240, 240, 240, 0.29)">
+      <h1 class="h3 mb-3 font-weight-normal">Please sign up</h1><br>
       <label for="inputEmail" class="sr-only">user id</label>
-      <input type="text"  id="username" required name="username" class="form-control" placeholder="User Id"><button id = "checkid">중복확인</button><br>
+      &emsp; &emsp; &emsp;&emsp; &nbsp;<input type="text"  id="username" required name="username" class="form-control" placeholder="User Id" style="width:250px; display:inline;"> <button id = "checkid"  style="display:inline; border-radius: 5px;background-color : orange;color:white">중복확인</button><br>
+      <br>
       <label for="inputPassword" class="sr-only">job</label>
-      <input type="text" id="job" required name="job" class="form-control" placeholder="Job"><br>
+      <input type="text" id="job" required name="job" class="form-control" placeholder="Job" style="width:250px"><br>
       <label for="inputPassword" class="sr-only">location</label>
-      <input type="text"  id="location" required name="location" class="form-control" placeholder="Location you live"><br>
+      <input type="text"  id="location" required name="location" class="form-control" placeholder="Location you live" style="width:250px"><br>
       <label for="inputPassword" class="sr-only">Email</label>
-      <input type="email"  id="email" required name="email" class="form-control" placeholder="Email"><br>
+      <input type="email"  id="email" required name="email" class="form-control" placeholder="Email" style="width:250px"><br>
       <label for="inputPassword" class="sr-only">Password</label>
-      <input type="password" id="password" class="form-control" name="password" placeholder="password" required><br>
+      <input type="password" id="password" class="form-control" name="password" placeholder="password" required style="width:250px"><br>
       <label for="inputPassword" class="sr-only">Password Confirm</label>
-      <input type="password" id="confirm" class="form-control" name="password_confirm" placeholder="password confirm" required><br>
-
-
-      <button class="btn btn-lg btn-primary btn-block" type="submit" value="Sign Up"  style=" background-color : orange;">Sign Up</button>
+      <input type="password" id="confirm" class="form-control" name="password_confirm" placeholder="password confirm" required style="width:250px"><br>
+      </div>
+      <br>
+      <button class="btn btn-lg btn-primary btn-block" type="submit" value="Sign Up"  style=" background-color : orange; width:150px;border:orange ">Sign Up</button>
+    
+    </center>
       <p class="mt-5 mb-3 text-muted">&copy; 2020</p>
     </form>
 
