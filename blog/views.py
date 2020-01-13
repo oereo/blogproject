@@ -91,7 +91,8 @@ def upload(request):
             photo = form.save(commit=False) # photo객체를 가져오긴 하나 DB에 아직 저장하진 않음
             photo.owner = request.user      # request.user는 로그인한 사용자
             form.save()
-            return render(request, 'home.html', {'form' : form})
+            # return render(request, 'home.html', {'form' : form})
+            return redirect(home)
     else:
         form = UploadForm()
     return render(request, 'upload.html', {'form' : form})      

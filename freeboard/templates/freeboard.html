@@ -2,7 +2,7 @@
 {% block content %}
 <div class="board">
     <div class="lower-part">
-        <div class="line"></div>
+        
         
         <div class="free-board-wrap">
             <div class='search-state' style= "text-align: center;" >
@@ -21,14 +21,26 @@
                 <button class="createbtn"onclick="location.href='{% url 'newpost' %}'">글쓰기</button>
                 {% endif %}
             </div>
-            <div class="board-contents">
+            <div class="line"></div>
+            <table class = "table table-hover">
+                <thead>
+                   <tr>
+                       <th>번호</th>
+                       <th>제목</th>
+                       <th>작성자</th>
+                       <th>조회수</th>
+                   </tr>
+                </thead>
+                <tbody>
+                    
+            <!-- <div class="board-contents">
                 <table>
                 <tr>
                 <th class="post-num">글번호</th>
                 <th class="post-title">&nbsp;&nbsp;&nbsp;&nbsp;제목</th>
                 <th class="post-writer">작성자</th>
                 <th class="post-views">조회수</th>
-                </tr>
+                </tr> -->
                 {% for post in page_posts %}
                 <tr class="free-board-post">
                     <td class="post-num">{{post.id}}</td>

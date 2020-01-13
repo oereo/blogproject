@@ -111,7 +111,7 @@
   {% for post in page_photo%} <!--imagePost -->
   <div class="panel panel-default" align="center">
     
-    <div class="panel-heading"><h4><a href = "{% url 'detail_post' post.id %}">{{post.owner.username}}</a></h4></div>
+    <div class="panel-heading"><h4><a href = "{% url 'detail_post' post.id %}">{{post.title}}</a></h4></div>
     <div class="panel-body" align = "center">
       <img class="card-img-top" src="{{post.image.url }}" alt=" Card image cap">
       
@@ -123,8 +123,9 @@
 </div>
    
 </div>
-<footer class="blog-footer">
-  sdddd
+<footer class="footer">
+  <h2 class="footer-title">made</h2>
+  <h5>sehoon, hoseol</h5>
 </footer>
 </body>
 </html>

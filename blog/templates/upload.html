@@ -1,17 +1,17 @@
 {% extends 'base.html'%}
 {%block content%}
-
-<h1>Main Upload</h1>
-
-
-<form action = "{% url 'upload' %}" method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{form.as_p}}
-    <input type="submit" value="Upload"/>
-  </form>
-  
+<div class = "upload">
+  <h1>Main Upload</h1>
 
 
+  <form class = "upload_form" action = "{% url 'upload' %}" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{form.as_p}}
+      <input type="submit" value="Upload"/>
+    </form>
+    
 
+
+</div>
 
 {% endblock %}

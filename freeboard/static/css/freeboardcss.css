@@ -15,14 +15,13 @@
 .free-board-wrap{
     padding: 40px 0 0 0;
     background-color: white;
-    width: 920px;
+    width: 1020px;
     margin: 20px auto 0 auto;
     border-radius: 20px;
     box-shadow: 1px 1px 10px 0 rgba(15, 19, 32, 0.8);
 }
 .free-board-container{
-    width: 900px;
-    height: 650px;
+    width: 1000px;
     margin: 0px auto 0 auto;
     border-top: 1px solid black;
 }

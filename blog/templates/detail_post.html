@@ -1,7 +1,21 @@
 {% extends 'base.html'%}
 {%block content%}
-    {{post_detail.id}}
-    글쓴이 : {{post_detail.owner.username}}
-    <img class="card-img-top" src="{{post_detail.image.url }}" alt=" Card image cap">
-    {{post_detail.comment}}
+
+<br>
+<hr>
+<div class = "post_detail">
+    <p><h3> {{post_detail.title}}</h3> {{post_detail.pub_date}}</p>
+    <hr>
+
+    <h4>글쓴이 : {{post_detail.owner.username}}</h4>
+    <hr>
+    <div class = "wrap">
+        <img class="post_detail_img" src="{{post_detail.image.url }}" alt=" Card image cap">
+    </div>  
+    <hr>
+    <br>
+    <h4>{{post_detail.comment}}</h4>
+   
+    <br>
+</div>
 {% endblock %}
