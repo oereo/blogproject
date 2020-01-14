@@ -35,6 +35,7 @@ urlpatterns = [
     path('blog/postpage', blog.views.postpage , name = "postpage"),
     path('photo/<int:post_id>', blog.views.detail_post, name = "detail_post"),
     path('introduce/', blog.views.introduce, name = "introduce"),
+    path('contact/', blog.views.contact, name = "contact"),
    
     path('assign/', account.views.assign, name='assign'),
     path('login/', account.views.login, name='login'),
@@ -42,7 +43,7 @@ urlpatterns = [
     path('signup/', account.views.signup, name='signup'),
     path('signup/checkid/', account.views.checkid, name='checkid'),
     path('signup_1', account.views.signup_1 ,name = 'signup_1'),
-     path('activate/<str:uid64>/<str:token>/', account.views.activate, name='activate'),
+    path('activate/<str:uid64>/<str:token>/', account.views.activate, name='activate'),
     
     # 게시판
     path('freeboard', freeboard.views.freeboard, name='freeboard'),

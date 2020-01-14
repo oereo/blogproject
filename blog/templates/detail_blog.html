@@ -1,9 +1,13 @@
 {% extends 'base.html' %}
 {% block content %} 
+<br>
+<div class = "post_detail">
     {{blog_detail.Id}}
     글쓴이 : {{blog.onwer}}
     {{blog_detail.owner}}
     {{blog_detail.body}}
     <div>{{blog_detail.pub_date}}</div>
+</div>
+   
 
 {% endblock %} 

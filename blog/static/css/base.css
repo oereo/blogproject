@@ -12,7 +12,7 @@
     width: calc(100% - 60px);
     margin: 0 auto;
     padding: 0px 0;
-    background: #333;
+    background: #32332F;
     z-index: 1;
     text-align: right;
     padding-right: 2%;
@@ -34,7 +34,7 @@
   }
   
   .menu-area a {
-    color: orange;
+    color: #F89B6C;
     font-weight: 400;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -46,7 +46,7 @@
     z-index: 1;
   }
   .menu-area a:hover {
-    background: orange;
+    background: #F37321;
     color: #fff;
   }
   
@@ -60,7 +60,7 @@
     display : inline-table;
     width : 350px;
     height : 300px;
-    margin-right : 8px;
+    margin-right : 4px;
   }
 
   .panel:hover{
@@ -82,4 +82,69 @@
 
   .card-img-top{
     height : 120px;
+  }
+
+  .introduce{
+    background-color : #FFFAED;
+    display: grid;
+    grid-template-columns: 550px 480px;
+    grid-template-rows: 300px ;
+    
+    padding : none;
+    width : 100%;
+   
+  }
+
+  .introduce img{
+    margin-left : 100px;
+    margin-top : 50px;
+  }
+
+  .main-introduce{
+    color : white;
+    display: grid;
+    font-size : 30px;
+    grid-template-columns: 550px 560px;
+    grid-template-rows: 300px 300px;
+  }
+
+  #div1{
+    background-color : #32332F;
+    padding : 10px;
+  }
+
+  #div2{
+    background-color : #FFFAED;
+  }
+
+  #div3{
+    background-color : #FFFAED;
+  }
+
+  #div4{
+    background-color : #32332F;
+  }
+
+  .table{
+    font-size : 12px;
+    background-color : #FFFAED;
+  }
+
+  .container h3{
+    
+    font-weight: 300;
+  }
+
+  .background{
+    background-color: #FFFAED;
+    padding : 6px;
+  }
+
+  .background p{
+    margin : 4px;
+  }
+
+  footer{
+    text-align : center;
+    font-size : 20px;
   }

@@ -6,7 +6,9 @@
 
   <form class = "upload_form" action = "{% url 'upload' %}" method="POST" enctype="multipart/form-data">
       {% csrf_token %}
-      {{form.as_p}}
+      {{form}}
+      <textarea name = "comment" id = "id_comment" required = "" type = "text" ></textarea>
+      <textarea cols = 40 rows = 10 id = id_commen></textarea>
       <input type="submit" value="Upload"/>
     </form>
     

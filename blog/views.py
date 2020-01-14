@@ -116,3 +116,6 @@ class HomeView(ListView):
         user = self.request.user    # 로그인되어있는 사용자
         return user.photo_set.all().order_by('pub_date')
 
+def contact(request):
+    return render(request,'contact.html')
+

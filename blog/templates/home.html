@@ -12,7 +12,13 @@
  
   <hr>
   <div class = "container">
-      <h3>알림사항</h3>
+      
+      <h1 style = "margin : 5px;">알림사항</h1>
+      <hr>
+  <div class = "background">   
+    
+    <br>
+      
      
   <table class = "table table-hover">
    <thead>
@@ -35,10 +41,10 @@
       
      </tr>
      {% endfor %}
+     
    </tbody>
   
 </table>
-<button class="createbtn"onclick="location.href='{% url 'new' %}'">글쓰기</button>
 
 <div class = "page">
                   {% if page_blogs.has_previous %}
@@ -54,10 +60,15 @@
                       <a href="?page={{page_blogs.paginator.num_pages}}">Last</a>
                   {% endif %}
                 </div>
+                <button class="createbtn"onclick="location.href='{% url 'new' %}'">글쓰기</button>
         </div>
+        <br>
+        <br>
+        
         <hr>
         <br>
-  
+  </div>
+  <br>
   <!-- <div class="row mb-2">
     <div class="col-md-6">
       <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
@@ -105,7 +116,10 @@
 </div> -->
 
 <div class = "container">
-<h3>소식</h3>
+<h1 style = "margin : 5px;">소식</h1>
+<hr>
+<div class = "background">
+
 <p> <a class="btn btn-primary" href="{% url 'upload'%}" method="POST" enctype="multipart/form-data" style = "background-color : orange; border-color : orange">업로드</a> <a class="btn btn-primary" href = "{% url 'postpage' %}" style = "background-color : orange; border-color : orange">더보기</a></p>
 
   {% for post in page_photo%} <!--imagePost -->
@@ -121,12 +135,9 @@
       {% endfor %}
       
 </div>
-   
+</div>   
 </div>
-<footer class="footer">
-  <h2 class="footer-title">made</h2>
-  <h5>sehoon, hoseol</h5>
-</footer>
+
 </body>
 </html>
 {%endblock%}
