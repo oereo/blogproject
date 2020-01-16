@@ -24,36 +24,30 @@
 </tr>
 {% endfor %}
 
+
 <table class="table">
     <thead>
       <tr>
         <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
+        <th scope="col">유저</th>
+        <th scope="col">직업</th>
+        <th scope="col">거주지</th>
+        <th scope="col">메일</th>
       </tr>
     </thead>
     <tbody>
+            {% for data in user_data %}
       <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
+        <th scope="row">{{data.id}}</th>
+        <td>{{data.username}}</td>
+        <td>{{data.profile.job}}</td>
+        <td>{{data.profile.location}}</td>
+        <td>{{data.email}}</td>
       </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Larry</td>
-        <td>the Bird</td>
-        <td>@twitter</td>
-      </tr>
+      {% endfor %}
     </tbody>
   </table>
+  
 </body>
 </html>
 {%endblock%}
