@@ -6,11 +6,12 @@
 <div class = "container">
 {% for post in imagePost %}
     <div class="panel panel-default" align="center">
-            <div class="panel-heading"><h4>{{post.owner.username}}</h4></div>
+            <div class="panel-heading"><h4><a href = "{% url 'detail_post' post.id %}">{{post.title}}</a></h4></div>
             <div class="panel-body" align = "center">
             <img class="card-img-top" src="{{post.image.url }}" alt=" Card image cap">
             
                 {{post.comment}}
+                {{post.owner.username}}
             </div>
             </div>
             {% endfor %}
