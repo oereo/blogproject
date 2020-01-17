@@ -13,7 +13,7 @@
 
 /* board table */
 .free-board-wrap{
-    padding: 40px 0 0 0;
+    padding: 40px 0 20px 0;
     background-color: white;
     width: 1020px;
     margin: 20px auto 0 auto;
@@ -128,6 +128,18 @@
     text-align: center;
 }
 
-.btns{
+/* new post */
+.board-container{
+    /* text-align: center; */
+    border : 3px solid gray;
+    padding : 20px;
 }
-/* Fonts */
+
+#newpost_title{
+    font-size: 20px;
+    width : 350px;
+}
+
+#newpost_body{
+    font-size: 15px;
+}

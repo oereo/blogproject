@@ -85,7 +85,7 @@
   }
 
   .introduce{
-    background-color : #FFFAED;
+    background-color : #FAFAFA;
     display: grid;
     grid-template-columns: 550px 480px;
     grid-template-rows: 300px ;
@@ -114,11 +114,11 @@
   }
 
   #div2{
-    background-color : #FFFAED;
+    background-color : #FAFAFA;
   }
 
   #div3{
-    background-color : #FFFAED;
+    background-color : #FAFAFA;
   }
 
   #div4{
@@ -127,7 +127,7 @@
 
   .table{
     font-size : 12px;
-    background-color : #FFFAED;
+    background-color : #FAFAFA;
   }
 
   .container h3{
@@ -136,8 +136,10 @@
   }
 
   .background{
-    background-color: #FFFAED;
+    background-color: #FAFAFA;
     padding : 6px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px 0 rgba(15, 19, 32, 0.8);
   }
 
   .background p{

@@ -9,22 +9,13 @@
     <title>Document</title>
 </head>
 <body>
-<h3>아이디:{{name}} 관리자님 환영합니다</h3>
+    <br>
+<h3>아이디: {{name}} 관리자님 환영합니다</h3>
 <h3>직업: {{job}}</h3>
 <h3>지역: {{location}}</h3>
 <hr>
 <h2>유저 데이터</h2>
-{% for data in user_data %}
-<tr class="free-board-post">
-    <td class="post-num">{{data.id}}유저:{{data.username}}</td>
-    <td class="post-title">직업:{{data.profile.job}}</td>
-    <td class="post-writer">거주지:{{data.profile.location}}</td>
-    <td class="post-writer">메일:{{data.email}}</td>
-    <br>
-</tr>
-{% endfor %}
-
-
+<br>
 <table class="table">
     <thead>
       <tr>

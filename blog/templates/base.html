@@ -106,7 +106,14 @@
         <li><a href="{% url 'home' %}">Home</a></li>
         <li><a href="{% url 'introduce' %}">소개</a></li>
         <li><a href="{% url 'freeboard' %}">자유게시판</a></li>
-        <li><a href="{% url 'mypage' %}">MyPage</a></li>
+        {% if user.is_authenticated == False %}
+        <li><a href="{% url 'mypage' %}" onclick ='mypage_click()'>MyPage</a></li>
+        {% endif %}
+        {% if user.is_authenticated == True %}
+        <li><a href="{% url 'mypage' %}" >MyPage</a></li>
+        {% endif %}
+        
+        
         <li><a href="{% url 'contact' %}">Contact</a></li>
       </ul>
     </nav>
@@ -171,5 +178,9 @@
   $('.carousel').carousel({
     interval: 3000
   })
+
+  function mypage_click(){
+    alert('로그인을 해주세요.');
+  }
 </script>
   </body>

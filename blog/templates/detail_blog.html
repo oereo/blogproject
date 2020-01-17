@@ -2,12 +2,15 @@
 {% block content %} 
 <br>
 <div class = "post_detail">
-    {{blog_detail.Id}}
-    글쓴이 : {{blog.onwer}}
-    {{blog_detail.owner}}
-    {{blog_detail.body}}
-    <div>{{blog_detail.pub_date}}</div>
+    <p><h3> {{blog_detail.title}}</h3> {{blog_detail.pub_date}}</p>
+    <hr>
+    <h4>글쓴이 : {{blog_detail.owner}}</h4>
+    <hr>
+    <br>
+    <h4>{{blog_detail.body}}</h4>
+    
 </div>
    
+
 
 {% endblock %} 

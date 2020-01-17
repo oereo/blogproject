@@ -4,18 +4,20 @@
 <div class="board">
     <div class="lower-part">
         <div class="line"></div>
+        <br>
+        <br>
         <div class="board-container">
             <form method ="POST" action="{% url 'createpost' %}">
                 {% csrf_token %}
-                <h4>제목: </h4>
-                <input type="text" name="title">
+                
+                <p><h4>제목: </h4> <input id = "newpost_title" type="text" name="title"></p>
                 <br>
-                <br>
+                
                 <h4>본문: </h4>
-                <textarea cols=40 rows=10 name="body"></textarea>
+                <textarea id = "newpost_body" cols=120 rows=10 name="body"></textarea>
                 <br>
                 <br>
-                <input class="btn btn-dark" type="submit" value="제출">
+                <input style = " text-align: right;" class="btn btn-dark" type="submit" value="제출">
             </form>
         </div>
     </div>

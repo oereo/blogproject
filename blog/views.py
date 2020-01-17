@@ -23,6 +23,8 @@ def home(request):
         imagePost= Photo.objects.all().order_by('-id')
         photo_paginator = Paginator(imagePost, 3)
         page_photo = photo_paginator.get_page(page1)
+        
+
         if user.is_staff == True:   
             return render(request, 'home.html', {'page_blogs' : page_blogs, 'imagePost':imagePost, 'page_photo' : page_photo})
         else:
@@ -66,6 +68,11 @@ def create(request):
 
 def mypage(request):
     user = request.user
+    if user.is_authenticated == False:
+        err_mypage = 0
+        return redirect('home')
+        #  return HttpResponse('사용자명이 이미 존재합니다.')
+
     if user.is_staff == False:
         user_job=user.profile.job
         user_loc=user.profile.location
