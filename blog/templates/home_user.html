@@ -12,8 +12,9 @@
  
   <hr>
   <div class = "container">
-      <h3>공지사항</h3>
-     
+      <h1 style = "margin : 5px;">알림사항</h1>
+      <hr>
+      <div class = "background">   
   <table class = "table table-hover">
    <thead>
       <tr>
@@ -53,9 +54,11 @@
                   {% endif %}
                 </div>
         </div>
-        <hr>
+        
         <br>
-  
+        
+  </div>
+  <br>
   <!-- <div class="row mb-2">
     <div class="col-md-6">
       <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
@@ -102,7 +105,9 @@
   </div>
 </div> -->
 <div class = "container">
-  <h3>소식</h3>
+    <h1 style = "margin : 5px;">소식</h1>
+    <hr>
+  <div class = "background">
   <a class="btn btn-primary" href = "{% url 'postpage' %}" style = "background-color : orange; border-color : orange">더보기</a></p>
   
     {% for post in page_photo%} <!--imagePost -->
@@ -116,7 +121,7 @@
         </div>
       </div>
         {% endfor %}
-        
+      </div>    
   </div>
       
 
