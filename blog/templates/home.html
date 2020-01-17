@@ -33,6 +33,7 @@
    <tbody>
       {% for blog in page_blogs %}
      <tr>
+       
         <td id = "blog_id">{{blog.id}}</td>
         <td id = "blog_owner"><a href = "{% url 'detail_blog' blog.id %}">{{blog.title}}</a></td>
         <td id = "blog_title">{{blog.owner}}</td>

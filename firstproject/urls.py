@@ -36,7 +36,8 @@ urlpatterns = [
     path('photo/<int:post_id>', blog.views.detail_post, name = "detail_post"),
     path('introduce/', blog.views.introduce, name = "introduce"),
     path('contact/', blog.views.contact, name = "contact"),
-   
+    path('deletephoto/<int:post_id>', blog.views.deletephoto, name='deletephoto'),
+
     path('assign/', account.views.assign, name='assign'),
     path('login/', account.views.login, name='login'),
     path('logout/', account.views.logout, name='logout'),
