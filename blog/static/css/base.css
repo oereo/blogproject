@@ -7,17 +7,7 @@
     padding-top: 5px;
   }
   
- nav {
-   
-    width: calc(100% - 60px);
-    margin: 0 auto;
-    padding: 0px 0;
-    background: #32332F;
-    z-index: 1;
-    text-align: right;
-    padding-right: 2%;
-
-  }
+ 
   
   .logo {
     width: 15%;
