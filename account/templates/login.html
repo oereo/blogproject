@@ -1,28 +1,5 @@
-
-    
 {% extends 'accounts_base.html' %}
 {% block content %}
-
-
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
-
-    <title>Signin Template for Bootstrap</title>
-
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sign-in/">
-
-    <!-- Bootstrap core CSS -->
-    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="signin.css" rel="stylesheet">
-  </head>
 
   <body class="text-center">
     <form class="signup-form" method='POST' action="{% url 'login' %}">
@@ -30,30 +7,29 @@
   
       <center>
         <br><br>
-       <div style="width:500px; background-color:rgba(240, 240, 240, 0.29)">
+       <div style="width:700px; background-color:rgba(240, 240, 240, 0.29)">
         <br>
-      <h1 class="h3 mb-3 font-weight-normal">Log in</h1><br>
+      <h1 class="h1 mb-3 font-weight-normal">Log in</h1><br>
       <label for="inputEmail" class="sr-only">Id</label>
-      <input type="text"  id="login" required name="login" class="form-control" placeholder="User Id" style="width:250px;">
+      <input type="text"  id="login" required name="login" class="form-control" placeholder="User Id" style="width:250px;font-size : 15px;">
       <br>
       <label for="inputPassword" class="sr-only">Password</label>
-      <input type="password" id="password" class="form-control" name="password" placeholder="password" required style="width:250px"><br>     
+      <input type="password" id="password" class="form-control" name="password" placeholder="password" required style="width:250px;font-size : 15px;"><br>     
       <br>
-      </div>
+      <button class="btn btn-lg btn-primary btn-block" type="submit" value="Sign Up"  style="font-size : 15px; background-color : orange; width:150px;border:orange ">Log in</button>
+    <br>
+    <br>  
+    </div>
       <br><br>
-      <button class="btn btn-lg btn-primary btn-block" type="submit" value="Sign Up"  style=" background-color : orange; width:150px;border:orange ">Log in</button>
+      
     
     </center>
-      <p class="mt-5 mb-3 text-muted">&copy; 2020</p>
+      
     </form>
 
 
 
   </body>
-</html>
-
-
-
 
 <!--  -->
 <div class="line"></div>
