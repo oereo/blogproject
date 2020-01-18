@@ -12,11 +12,11 @@
             <form method ="POST" action="{% url 'edit' editpost.id %}">
                 {% csrf_token %}
                 <h4>제목: </h4>
-                <input type="text" name="title" id="editTitle" value="{{editpost.title}}">
+                <input type="text" name="title" id="editTitle" value="{{editpost.title}}"style = "width : 100%">
                 <br>
                 <br>
                 <h4>본문: </h4>
-                <textarea cols=40 rows=10 name="body">{{editpost.body}}</textarea>
+                <textarea cols=40 rows=10 name="body"style = "width : 100%">{{editpost.body}}</textarea>
                 <br>
                 <br>
                 <input class="btn btn-dark" type="submit" value="수정">
@@ -25,10 +25,7 @@
     </div>
 </div>
 
-<footer class="footer">
-        <h2 class="footer-title">LIKE LION</h2>
-        <h5>khjvvv7@gmail.com</h5>
-</footer>
+
 <script type="text/javascript">
 </script>
 {% endblock %}

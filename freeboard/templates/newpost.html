@@ -10,11 +10,11 @@
             <form method ="POST" action="{% url 'createpost' %}">
                 {% csrf_token %}
                 
-                <p><h4>제목: </h4> <input id = "newpost_title" type="text" name="title"></p>
+                <p><h4>제목: </h4> <input id = "newpost_title" type="text" name="title" style = "width : 80%"></p>
                 <br>
                 
                 <h4>본문: </h4>
-                <textarea id = "newpost_body" cols=120 rows=10 name="body"></textarea>
+                <textarea id = "newpost_body" cols=120 rows=10 name="body" style = "width : 100%"></textarea>
                 <br>
                 <br>
                 <input style = " text-align: right;" class="btn btn-dark" type="submit" value="제출">
@@ -23,7 +23,5 @@
     </div>
 </div>
 
-<footer class="footer">
-        
-</footer>
+
 {% endblock %}
