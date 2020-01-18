@@ -55,7 +55,7 @@ def signup(request):
                     })
                 print(message)
                 # auth.login(request,user)
-                mail_subject = "[정치판] 회원가입 인증 메일입니다."
+                mail_subject = "[Munhwaparty] 회원가입 인증 메일입니다."
                 user_email = user.email
                 email = EmailMessage(mail_subject, message, to=[user_email])
                 email.send()
