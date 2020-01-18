@@ -63,7 +63,7 @@
   }
 
   .panel-body{
-    width : 345px;
+    width : 90%;
     height : 270px;
     padding-top : 5px;
     
@@ -71,6 +71,7 @@
 
   .panel-heading{
     background-color : gray;
+    width : 100%;
     margin : none;
   }
   .panel-heading a{
