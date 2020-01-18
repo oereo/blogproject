@@ -48,7 +48,7 @@
   .panel  {
     position : relative;
     display : inline-table;
-    width : 350px;
+    width : 33%;
     height : 300px;
     margin-right : 4px;
     border : 2px solid gray;

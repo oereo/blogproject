@@ -5,7 +5,7 @@
   <h1>Main Upload</h1>
 <hr>
 <div class = "post_detail">
-  <form class = "upload_form" action = "{% url 'upload' %}" method="POST" enctype="multipart/form-data">
+  <form class = "upload_form" action = "{% url 'upload' %}" method="POST" enctype="multipart/form-data" style = "width : 90%">
       {% csrf_token %}
       {{form.as_p}}
       
