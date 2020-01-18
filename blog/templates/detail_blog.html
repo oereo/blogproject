@@ -2,9 +2,11 @@
 {% block content %} 
 <br>
 <div class = "post_detail">
-    <p><h3> {{blog_detail.title}}</h3> {{blog_detail.pub_date}}</p>
+    <p><h3> {{blog_detail.title}}</h3> {{blog_detail.pub_date}} &nbsp; 글쓴이 : {{blog_detail.owner}}</p>
     <hr>
-    <h4>글쓴이 : {{blog_detail.owner}}</h4>
+    {% if user.username == blog_detail.owner %}
+        <button class="deletepost"onclick="location.href='{% url 'deleteblog' blog_detail.id %}'">삭제하기</button>    
+    {% endif %}
     <hr>
     <br>
     <h4>{{blog_detail.body}}</h4>

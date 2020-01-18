@@ -37,6 +37,7 @@ urlpatterns = [
     path('introduce/', blog.views.introduce, name = "introduce"),
     path('contact/', blog.views.contact, name = "contact"),
     path('deletephoto/<int:post_id>', blog.views.deletephoto, name='deletephoto'),
+    path('deleteblog/<int:blog_id>', blog.views.deleteblog, name = 'deleteblog'),
 
     path('assign/', account.views.assign, name='assign'),
     path('login/', account.views.login, name='login'),

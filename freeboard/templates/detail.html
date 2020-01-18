@@ -5,15 +5,19 @@
         <div class="line2"></div>
         <div class="free-board-wrap">
         <div class="free-board-container">
+            <div class="detail-title">
+               글 제목 : {{post.title}}
+            </div>
+            
             <div class="detail-author">
                 글 쓴이 : {{post.owner}}
             </div>
-            <div class="detail-title">
-                글 제목 : {{post.title}}
+            
+            <br>
+            <div class="detail-body" style = "border : 2px solid gray; padding : 2px; background-color : #FAFAFA">
+             {{post.body}}
             </div>
-            <div class="detail-body">
-                내용 : {{post.body}}
-            </div>
+            <br>
             <div class="freeboard-detail-btns">
                 <button class="gofreeboard"onclick="location.href='{% url 'freeboard' %}'">목록</button>
                 {% if user.username == post.owner %}

@@ -65,6 +65,11 @@ def create(request):
    
     # 입력받은 내용을 데이터 베이스에 넣어주는 함수
 
+def deleteblog(request, blog_id):
+    blog = Blog.objects.filter(id=blog_id)
+    blog.delete()
+    return redirect('home')
+
 def deletephoto(request, post_id):
     post = Photo.objects.filter(id=post_id)
     post.delete()
