@@ -1,17 +1,17 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="board">
+<div class="board" >
     <div class="lower-part">
         
         
-        <div class="free-board-wrap">
+        <div class="free-board-wrap" style = "width : 100%;">
             <div class='search-state' style= "text-align: center;" >
                 {% if request.path == '/freeboard/sort' %}
                     <h4>*상태 : 조회순 정렬</h4>
                 {% endif %}
             </div>
-        <div class="free-board-container">
-            <div class="board-header">
+        <div class="free-board-container"style = "width : 100%;">
+            <div class="board-header"style = "width : 100%;">
                 {% if request.path == '/freeboard' %}
                     <button class="createbtn"onclick="location.href='{% url 'sort_freeboard' %}'">조회순</button>
                 {% elif request.path == '/freeboard/sort' %}
@@ -24,13 +24,14 @@
             <div class="line"></div>
             <table class = "table table-hover">
                 <thead>
-                   <tr>
-                       <th>번호</th>
-                       <th>제목</th>
-                       <th>작성자</th>
-                       <th>조회수</th>
-                   </tr>
-                </thead>
+                    <tr>
+                        <th>번호</th>
+                        <th>제목</th>
+                        <th>작성자</th>
+                        <th>날짜</th>
+                        <th>조회수</th>
+                    </tr>
+                 </thead>
                 <tbody>
                     
             <!-- <div class="board-contents">
@@ -42,17 +43,20 @@
                 <th class="post-views">조회수</th>
                 </tr> -->
                 {% for post in page_posts %}
-                <tr class="free-board-post">
-                    <td class="post-num">{{post.id}}</td>
-                    <td class="post-title"><a href="{% url 'detail' post.id %}">{{post.title}}</a></td>
-                    <td class="post-writer">{{post.owner}}</td>
-                    <td class="post-views">{{post.views}}</td>
+                <tr>
+                    <td id = "blog_id">{{post.id}}</td>
+                    <td id = "blog_owner"><a href="{% url 'detail' post.id %}">{{post.title}}</a></td>
+                    <td id = "blog_title">{{post.owner}}</td>
+                    <td id = "blog_date">{{post.pub_date}}</td>
+                    <td id = "blog_view">{{post.views}}</td>
                 </tr>
                 {% endfor %}
+            </tbody>
                 </table>
+            
             </div>
-            <div class="freeboard-search" style = "text-align: center">
-                <form method="POST" action="{% url 'freeboardSearch' %}">
+            <div class="freeboard-search" style = "text-align: center; width:100%;">
+                <form method="POST" action="{% url 'freeboardSearch' %}" style ="width : 90%;">
                     {% csrf_token %}
                     <select id="" name='condition'>
                         <option class="titlesearch" value="titlesearch">글제목</option>

@@ -1,4 +1,4 @@
-{% extends 'accounts_base.html' %}
+{% extends 'base.html' %}
 {% block content %}
 
 
@@ -15,25 +15,27 @@
   <br>
   <div class="progress" style = "margin-bottom : 0px; height : 15px;">
     <div class="progress-bar" role="progressbar" style="width: 33%;  background-color : orange;" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100"></div>
+    
   </div>
-  <table width=960px; style = "margin-left : 50px;font-size : 15px;" >
-      <thead > 
-        <tr>
-          <th></th>
-          <th style = "text-align : center">이용약관</th>
-          <th style = "text-align : center">정보가입</th>
-          <th style = "text-align : center">가입완료</th>
-         </tr>
-      </thead>
-      
-    </table>
+  <table width=90%; style = "margin : auto;font-size : 15px;" >
+    <thead > 
+      <tr>
+        <th></th>
+        <th style = "text-align : center">이용약관</th>
+        <th style = "text-align : center">정보가입</th>
+        <th style = "text-align : center">가입완료</th>
+       </tr>
+    </thead>
+    
+  </table>
+  
     <br>
-  <table width=960px; text-align=center>
+  <table width=90%; height = auto; text-align=center>
     <tr>
         <td align=center>
             
             <!--이용약관 테이블 시작-->
-            <table width=810>
+            <table width=90%;>
               <tr>
                 <td>
                   <div>
@@ -46,7 +48,7 @@
              <tr>
                 <td align=center>
                   <br>
-                  <textarea name="tos" rows=15 cols=100>
+                  <textarea class = "textarea_signup"name="tos" rows=15 cols=100>
 TEST 문구입니다.
                    </textarea>
                  </td>
@@ -68,7 +70,7 @@ TEST 문구입니다.
    <tr>
      <td align=center>
        <br>
-       <textarea name="tos" rows=15 cols=100>
+       <textarea class = "textarea_signup" name="tos" rows=15 cols=100>
 TEST 문구입니다. 
   
         </textarea>

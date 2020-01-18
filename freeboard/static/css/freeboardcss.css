@@ -54,12 +54,12 @@
 
 .freeboard-search{
     width: 100%;
-    padding-right: 90px;
+    /* padding-right: 90px; */
     margin: 0 auto;
 }
 
 .freeboard-searchbox{
-    width:500px;
+    width:40%;
     margin: 10px 0 10px 20px;
 }
 .freeboard-btn {

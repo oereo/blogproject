@@ -1,0 +1,44 @@
+.contact{
+  font-size : 25px;
+  font-weight : 400;
+ 
+}
+
+.contact_a{
+  font-size : 20px;
+}
+
+.contact_img{
+  width : 100%;
+  height : auto;
+  text-align: center;
+  margin : none;
+}
+
+
+/* banner */
+#carouselExampleIndicators{
+  width : 100%; 
+  height : auto;
+}
+
+
+/* login */
+.text-center{
+  width : 40%;
+  height : auto;
+}
+
+
+.textarea_signup{
+  width : 100%;
+  height : auto;
+}
+
+.free-board-wrap{
+  width : 100px;
+}
+
+.freeboard-search{
+  width : 40px;
+}

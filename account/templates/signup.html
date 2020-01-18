@@ -1,17 +1,14 @@
-{% extends 'accounts_base.html' %}
+{% extends 'base.html' %}
 {% block content %}
 <hr>
   <body class="text-center">
-    <form class="signup-form" method='POST' action="{% url 'signup' %}">
-      {% csrf_token %}
-    
-
+  
       <br>
         <div class="progress" style = "margin-bottom : 0px; height : 15px;">
           <div class="progress-bar" role="progressbar" style=" width: 66%; background-color : orange;" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
   
-        <table width=960px; style = "margin-left : 50px; font-size : 15px;" >
+        <table width=90%; style =  " margin-left : 15px;font-size : 15px;" >
           <thead > 
             <tr>
               <th></th>
@@ -24,36 +21,74 @@
         </table>
                
         <br>
-      <center>
-       <div style="width:700px; background-color:rgba(240, 240, 240, 0.29)">
-        <br>
-      <h1 class="h1 mb-3 font-weight-normal">Please sign up</h1><br>
-      <label for="inputEmail" class="sr-only">user id</label>
-      &emsp; &emsp; &emsp;&emsp; &nbsp;<input type="text"  id="username" required name="username" class="form-control" placeholder="User Id" style="font-size : 15px;width:250px; display:inline;"> <button id = "checkid"  style="display:inline; border-radius: 5px;background-color : orange;color:white">중복확인</button><br>
-      <br>
-      <label for="inputPassword" class="sr-only">job</label>
-      <input type="text" id="job" required name="job" class="form-control" placeholder="Job" style="font-size : 15px;width:250px"><br>
-      <label for="inputPassword" class="sr-only">location</label>
-      <input type="text"  id="location" required name="location" class="form-control" placeholder="Location you live" style="font-size : 15px;width:250px"><br>
-      <label for="inputPassword" class="sr-only">Email</label>
-      <input type="email"  id="email" required name="email" class="form-control" placeholder="Email" style="font-size : 15px;width:250px"><br>
-      <label for="inputPassword" class="sr-only">Password</label>
-      <input type="password" id="password" class="form-control" name="password" placeholder="password" required style="font-size : 15px;width:250px"><br>
-      <label for="inputPassword" class="sr-only">Password Confirm</label>
-      <input type="password" id="confirm" class="form-control" name="password_confirm" placeholder="password confirm" required style="font-size : 15px;width:250px"><br>
-      <br>
-      <button class="btn btn-lg btn-primary btn-block" type="submit" value="Sign Up"  style=" background-color : orange; width:150px;border:orange ">Sign Up</button>
-      <br>
-      </div>
-      <br>
-      <br>
-      
-    
-    </center>
-     
-    </form>
-
   
+    <form class="signup-form" method='POST' action="{% url 'signup' %}">
+      {% csrf_token %}
+    <h3 class="mb-3"><strong>회원가입</strong></h3>
+    <div class="mb-3">
+      <label for="username">UserID</label>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">ID</span>
+        </div>
+        <input type="text" class="form-control" id="username" placeholder="Username" required name="username"> <button id = "checkid"  style="display:inline; border-radius: 5px;background-color : orange;color:white">중복확인</button><br>
+        <div class="invalid-feedback" style="width: 100%;">
+          Your userID is required.
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="email">Email <span class="text-muted">(필수)</span></label>
+      <input type="email" class="form-control" id="email" placeholder="you@example.com"required name="email">
+      <div class="invalid-feedback">
+        Please enter a valid email address for shipping updates.
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="address">비밀번호</label>
+      <input type="password" class="form-control" id="address" placeholder="password" required name="password">
+      <div class="invalid-feedback">
+        Please enter your shipping address.
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="address">비밀번호 확인</label>
+      <input type="password" class="form-control" id="address" placeholder="password" required name="password_confirm">
+      <div class="invalid-feedback">
+        Please enter your shipping address.
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-5 mb-3">
+        <label for="country">Job</label>
+        <select class="custom-select d-block w-100" id="job" required name="job">
+          <option value="">Choose...</option>
+          <option>대학생</option>
+          <option>회사원</option>
+          <option>의사</option>
+        </select>
+        <div class="invalid-feedback">
+          Please select a valid country.
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="state">지역</label>
+        <select class="custom-select d-block w-100" id="location" required name="location">
+          <option value="">Choose...</option>
+          <option>부산</option>
+          <option>경기도</option>
+          <option>서울</option>
+        </select>
+        <div class="invalid-feedback">
+          Please provide a valid state.
+        </div>
+      </div>
+      <hr>
+    </div>
+      <button class="btn btn-lg btn-primary btn-block" type="submit" value="Sign Up"  style=" background-color : orange; width:150px;border:orange ">Sign Up</button>
+    </form>
   </body>
 
 
