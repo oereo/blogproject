@@ -28,16 +28,18 @@
         <th scope="col">직업</th>
         <th scope="col">거주지</th>
         <th scope="col">메일</th>
+        <th scope="col">추천인</th>
       </tr>
     </thead>
     <tbody>
-            {% for data in user_data %}
+      {% for data in user_data %}
       <tr>
         <th scope="row">-</th>
         <td>{{data.username}}</td>
         <td>{{data.profile.job}}</td>
         <td>{{data.profile.location}}</td>
         <td>{{data.email}}</td>
+        <td>{{data.profile.choose_people}}</td>
       </tr>
       {% endfor %}
     </tbody>

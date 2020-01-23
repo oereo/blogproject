@@ -39,10 +39,12 @@ def signup(request):
                 )
                 user.profile.job = request.POST['job']
                 user.profile.location = request.POST['location']
+                user.profile.choose_people = request.POST['choose_people']
                 user.is_active = False
                 user.save()
                 print( user.profile.job)
                 print( user.profile.location)
+                print( user.profile.choose_people)
 
                 current_site = get_current_site(request) 
                     # localhost:8000

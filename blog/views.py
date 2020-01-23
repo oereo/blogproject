@@ -85,15 +85,17 @@ def mypage(request):
     if user.is_staff == False:
         user_job=user.profile.job
         user_loc=user.profile.location
+        user_choose_people = user.profile.choose_people
         user_name=user.username
         email=user.email
-        return render(request, 'mypage.html', {'name':user_name,'job':user_job, 'location':user_loc, 'email':email})
+        return render(request, 'mypage.html', {'name':user_name,'job':user_job, 'choose_people':user_choose_people,'location':user_loc, 'email':email})
     else:
         users =  User.objects.all()
         user_job=user.profile.job
         user_loc=user.profile.location
+        user_choose_people = user.profile.choose_people
         user_name=user.username
-        return render(request, 'staff_page.html', {'name':user_name,'job':user_job, 'location':user_loc, 'user_data':users})
+        return render(request, 'staff_page.html', {'name':user_name,'job':user_job, 'choose_people':user_choose_people,'location':user_loc, 'user_data':users})
 
 def postpage(request):
     user = request.user
