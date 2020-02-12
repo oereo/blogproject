@@ -54,6 +54,10 @@
     <link rel = "stylesheet" href = "../static/css/freeboardcss.css">
     
     <style>
+      .bg-dark{
+        background-color: #1f4e5f;
+      }
+
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -75,13 +79,13 @@
       
   <header>
     
-
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" style = "margin-bottom : 50px;">
-      <a class="navbar-brand" href="#" style = "font-size : 30px;">MunhwaParty</a>
+    
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top " style = "margin-bottom : 50px;  background-color: #274c5e;">
+      <a class="navbar-brand" href="{% url 'home' %}" style = "font-size : 30px;">MunhwaParty</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
+      <div class="collapse navbar-collapse" id="navbarCollapse" style = "">
         <ul class="navbar-nav mr-auto" style = "font-size : 20px;">
           <li class="nav-item active">
             <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
@@ -119,7 +123,7 @@
           </div>
       </div>
     </nav>
-
+  
   </header>
 
   <!-- <div class="padding">

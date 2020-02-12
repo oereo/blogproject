@@ -114,7 +114,22 @@ def upload(request):
             return redirect(home)
     else:
         form = UploadForm()
-    return render(request, 'upload.html', {'form' : form})      
+    return render(request, 'upload.html', {'form' : form})
+
+def writecomment_blog(request, blog_id):
+    user = request.user
+    blog = get_object_or_404(Blog, pk=blog_id)
+    comment = Comment()
+    comment.blog = blog
+    comment.author = user.username
+    comment.text=request.POST['comment']
+    comment.save()
+    return redirect('detail_blog', blog_id)
+
+def deletecomment_blog(request,blog_id, comment_id):
+    comment = get_object_or_404(Comment, pk=comment_id)
+    comment.delete()
+    return redirect('detail_blog', blog_id)
 
 # def upload(request):
 #     form = UploadDocumentForm()
@@ -136,4 +151,7 @@ class HomeView(ListView):
 
 def contact(request):
     return render(request,'contact.html')
+
+
+    
 

@@ -38,6 +38,8 @@ urlpatterns = [
     path('contact/', blog.views.contact, name = "contact"),
     path('deletephoto/<int:post_id>', blog.views.deletephoto, name='deletephoto'),
     path('deleteblog/<int:blog_id>', blog.views.deleteblog, name = 'deleteblog'),
+    path('writecomment/<int:blog_id>', blog.views.writecomment_blog, name='writecomment_blog'),
+    path('deletecomment/<int:blog_id>/<int:comment_id>', blog.views.deletecomment_blog, name='deletecomment_blog'),
 
     path('assign/', account.views.assign, name='assign'),
     path('login/', account.views.login, name='login'),

@@ -47,6 +47,8 @@ class Comment(models.Model):
         return self.text
 
 
+
+
 def user_path(instance, filename): # instance는 Photo 클래스의 객체, filename은 업로드할 파일의 파일이름
     from random import choice   # string으로 나온 결과에서 하나의 문자열만 뽑아냄
     import string               # 무작위 문자열을 뽑아내기 위한 용도

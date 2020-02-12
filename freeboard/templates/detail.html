@@ -1,61 +1,60 @@
-{% extends 'base.html' %}
+{% extends 'accounts_base.html' %}
 {% block content %}
-<div class="board">
-    <div class="lower-part">
-        <div class="line2"></div>
-        <div class="free-board-wrap">
-        <div class="free-board-container">
-            <div class="detail-title">
-               글 제목 : {{post.title}}
-            </div>
-            
-            <div class="detail-author">
-                글 쓴이 : {{post.owner}}
-            </div>
-            
-            <br>
-            <div class="detail-body" style = "border : 2px solid gray; padding : 2px; background-color : #FAFAFA">
-             {{post.body}}
-            </div>
-            <br>
+
+<div class = "post_detail">
+    <p><h3> {{post.title}}</h3> {{post.pub_date}} &nbsp; 글쓴이 : {{post.owner}}</p>
+    <hr>
+    {% if user.username == blog_detail.owner %}
+        <button class="deletepost"onclick="location.href='{% url 'deleteblog' blog_detail.id %}'">삭제하기</button>
+        <hr>    
+    {% endif %}
+    
+    <br>
+    <div class = blog_body>
+        {{post.body}}
+    </div>
+
+   
+
+    <div class="post-comments">
             <div class="freeboard-detail-btns">
-                <button class="gofreeboard"onclick="location.href='{% url 'freeboard' %}'">목록</button>
-                {% if user.username == post.owner %}
-                <button class="editpost"onclick="location.href='{% url 'editpost' post.id %}'">수정하기</button>
-                <button class="deletepost"onclick="location.href='{% url 'deletepost' post.id %}'">삭제하기</button>
-            {% endif %}
-            </div>
-            <div class="post-comments">
-                <form method="POST" class="comment-form" action="{% url 'writecomment' post.id %}">
-                    {% csrf_token %}
-                    <textarea class="comment-box" name="comment"></textarea>
-                    <button class="comment-submit">작성</button>
-                </form>
-                <table class="comments">
-                    <tr class="comment-header">
-                        <th class="comment-author">작성자</th>
-                        <th class="comment-text">내용</th>
-                        <th></th>
-                    </tr>
-                    {% for c in post.comments.all %}
-                    <tr class="comment-tr">
-                        {% if c.author %}
-                        <td class="comment-author">{{c.author}}</td>
-                        {% else %}
-                        <td class="comment-author">손님</td>
-                        {% endif %}
-                        <td class="comment-text">{{c.text}}</td>
-                        {% if c.author == user.username %}
-                        <td class="comment-delete"><button class="btn-plus i-btn"onclick="
-                            var a= confirm('댓글을 삭제하시겠습니까?'); console.log(a); if(a==true){location.href='{% url 'deletecomment' post.id c.id %}'}"><i class="fa fa-times"></i>삭제하기</button></td>
-                        {% endif %}
-                    </tr>
-                    {% endfor %}
-                </table>
-            </div>
-        </div>
+                    <button class="gofreeboard"onclick="location.href='{% url 'freeboard' %}'">목록</button>
+                    {% if user.username == post.owner %}
+                    <button class="editpost"onclick="location.href='{% url 'editpost' post.id %}'">수정하기</button>
+                    <button class="deletepost"onclick="location.href='{% url 'deletepost' post.id %}'">삭제하기</button>
+                {% endif %}
+                </div>
+        <form method="POST" class="comment-form" action="{% url 'writecomment' post.id %}">
+            {% csrf_token %}
+            <textarea class="comment-box" name="comment"></textarea>
+            <button class="comment-submit">작성</button>
+        </form>
+        <table class="comments">
+            <tr class="comment-header">
+                <th class="comment-author">작성자</th>
+                <th class="comment-text">내용</th>
+                <th></th>
+            </tr>
+            {% for c in post.comments.all %}
+            <tr class="comment-tr">
+                {% if c.author %}
+                <td class="comment-author">{{c.author}}</td>
+                {% else %}
+                <td class="comment-author">손님</td>
+                {% endif %}
+                <td class="comment-text">{{c.text}}</td>
+                {% if c.author == user.username %}
+                <td class="comment-delete"><button class="btn-plus i-btn"onclick="
+                    var a= confirm('댓글을 삭제하시겠습니까?'); console.log(a); if(a==true){location.href='{% url 'deletecomment' post.id c.id %}'}"><i class="fa fa-times"></i>삭제하기</button></td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+        </table>
     </div>
-    </div>
+
 </div>
+
+
+
 
 {% endblock %}
