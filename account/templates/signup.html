@@ -108,6 +108,7 @@
 
     <script>
       $(function(){
+       
         $('#checkid').click(function(){
           var username = $('#username').val();
           if(username==''){
@@ -115,11 +116,12 @@
             return;
           }
           $.ajax({
-            url:'checkid?username='+username,
+            url:'signup/checkid?username='+username,
             type:'get',
             dataType: 'json',
             success:function(response){
               if(response.result != 'success'){
+                alert('존재dks하는 아이디입니다.')
                 console.error(response.data)
                 return;
               }
