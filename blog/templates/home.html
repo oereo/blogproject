@@ -12,6 +12,30 @@
  
   <hr>
   <div class = "container">
+    <h1 style = "margin : 5px;">소식</h1>
+    <hr>
+    <div class = "background">
+    
+    <p> <a class="btn btn-primary" href="{% url 'upload'%}" method="POST" enctype="multipart/form-data" style = "background-color : orange; border-color : orange">업로드</a> <a class="btn btn-primary" href = "{% url 'postpage' %}" style = "background-color : orange; border-color : orange">더보기</a></p>
+    <br>
+      {% for post in page_photo%} <!--imagePost -->
+      <div class="panel panel-default" align="center">
+        
+        <div class="panel-heading" ><h4 ><a style = "color : white;" href = "{% url 'detail_post' post.id %}">{{post.title}}</a></h4></div>
+        <div class="panel-body" align = "center">
+          <img class="card-img-top" src="{{post.image.url }}" alt=" Card image cap">
+          
+              <!-- {{post.comment}} -->
+          </div>
+        </div>
+          {% endfor %}
+          
+    </div>
+    </div> 
+
+    <br>
+    <br>
+  <div class = "container">
       
       <h1 style = "margin : 5px;">알림사항</h1>
       <hr>
@@ -119,27 +143,7 @@
   </div>
 </div> -->
 
-<div class = "container">
-<h1 style = "margin : 5px;">소식</h1>
-<hr>
-<div class = "background">
-
-<p> <a class="btn btn-primary" href="{% url 'upload'%}" method="POST" enctype="multipart/form-data" style = "background-color : orange; border-color : orange">업로드</a> <a class="btn btn-primary" href = "{% url 'postpage' %}" style = "background-color : orange; border-color : orange">더보기</a></p>
-<br>
-  {% for post in page_photo%} <!--imagePost -->
-  <div class="panel panel-default" align="center">
-    
-    <div class="panel-heading" ><h4 ><a style = "color : white;" href = "{% url 'detail_post' post.id %}">{{post.title}}</a></h4></div>
-    <div class="panel-body" align = "center">
-      <img class="card-img-top" src="{{post.image.url }}" alt=" Card image cap">
-      
-          <!-- {{post.comment}} -->
-      </div>
-    </div>
-      {% endfor %}
-      
-</div>
-</div>   
+  
 </div>
 
 </body>
