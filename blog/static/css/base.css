@@ -1,96 +1,12 @@
 body{
   background-color : #f2f2f2;
+  font-size : 2vw;
 }
 
 .page{
   text-align: center;
 }
 
-/* body.subpage {
-  padding-top: 3.25em;
-}
-
-@-moz-keyframes reveal-header {
-  0% {
-    top: -4em;
-    opacity: 0;
-  }
-
-  100% {
-    top: 0;
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes reveal-header {
-  0% {
-    top: -4em;
-    opacity: 0;
-  }
-
-  100% {
-    top: 0;
-    opacity: 1;
-  }
-}
-
-@-ms-keyframes reveal-header {
-  0% {
-    top: -4em;
-    opacity: 0;
-  }
-
-  100% {
-    top: 0;
-    opacity: 1;
-  }
-}
-
-@keyframes reveal-header {
-  0% {
-    top: -4em;
-    opacity: 0;
-  }
-
-  100% {
-    top: 0;
-    opacity: 1;
-  }
-}
-
-
-#header {
-  background: rgba(0, 0, 0, 0.975);
-  color: #a6a6a6;
-  cursor: default;
-  height: 4.25em;
-  left: 0;
-  line-height: 2.25em;
-  position: fixed;
-  text-align: right;
-  top: 0;
-  width: 100%;
-  z-index: 10001;
-}
-
-#header.reveal {
-  -moz-animation: reveal-header 0.5s ease;
-  -webkit-animation: reveal-header 0.5s ease;
-  -ms-animation: reveal-header 0.5s ease;
-  animation: reveal-header 0.5s ease;
-}
-
-#header.alt {
-  -moz-animation: none;
-  -webkit-animation: none;
-  -ms-animation: none;
-  animation: none;
-  background-color: transparent;
-  box-shadow: none;
-  overflow: hidden;
-  position: absolute;
-  top: 1.5em;
-} */
 
 .padding{
     padding-top: 5px;

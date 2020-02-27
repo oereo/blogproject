@@ -106,39 +106,5 @@
 <!--  -->
 <div class="line"></div>
 
-    <script>
-      $(function(){
-       
-        $('#checkid').click(function(){
-          var username = $('#username').val();
-          if(username==''){
-            alert('아이디를 입력해주세요.');
-            return;
-          }
-          $.ajax({
-            url:'signup/checkid?username='+username,
-            type:'get',
-            dataType: 'json',
-            success:function(response){
-              if(response.result != 'success'){
-                console.error(response.data)
-                return;
-              }
-              if(response.data == 'exist'){
-                alert('존재하는 아이디입니다.')
-                $('#username').val('').focus();
-                return;
-              } else {
-                $('#checkid').hide();
-                return;
-              }
-            },
-            error : function(xhr, error){
-              alert('서버와의 통신에 문제가 발생했습니다.')
-              console.log('error : '+ error);
-            }
-          })
-        })
-      });
-    </script>
+    
 {% endblock %}
