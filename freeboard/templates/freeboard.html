@@ -4,30 +4,30 @@
 <hr>
 
 <h1>자유게시판</h1>
-<div class="board" >
+<div class="board">
     <div class="lower-part">
-        
-        
-        <div class="free-board-wrap" style = "width : 100%;">
-            <div class='search-state' style= "text-align: center;" >
+
+
+        <div class="free-board-wrap" style="width : 100%;">
+            <div class='search-state' style="text-align: center;">
                 {% if request.path == '/freeboard/sort' %}
-                    <h4>*상태 : 조회순 정렬</h4>
+                <h4>*상태 : 조회순 정렬</h4>
                 {% endif %}
             </div>
-        <div class="free-board-container"style = "width : 100%;">
-            <div class="board-header"style = "width : 100%;">
-                {% if request.path == '/freeboard' %}
-                    <button class="createbtn"onclick="location.href='{% url 'sort_freeboard' %}'">조회순</button>
-                {% elif request.path == '/freeboard/sort' %}
-                    <button class="createbtn"onclick="location.href='{% url 'freeboard' %}'">원래대로</button>
-                {% endif %}
-                {% if err == 0 %}
-                <button class="createbtn"onclick="location.href='{% url 'newpost' %}'">글쓰기</button>
-                {% endif %}
-            </div>
-            <div class="line"></div>
-            <table class = "table table-hover">
-                <thead>
+            <div class="free-board-container" style="width : 100%;">
+                <div class="board-header" style="width : 100%;">
+                    {% if request.path == '/freeboard' %}
+                    <button class="createbtn" onclick="location.href='{% url 'sort_freeboard' %}'">조회순</button>
+                    {% elif request.path == '/freeboard/sort' %}
+                    <button class="createbtn" onclick="location.href='{% url 'freeboard' %}'">원래대로</button>
+                    {% endif %}
+                    {% if err == 0 %}
+                    <button class="createbtn" onclick="location.href='{% url 'newpost' %}'">글쓰기</button>
+                    {% endif %}
+                </div>
+                <div class="line"></div>
+                <table class="table table-hover">
+                    <thead>
                     <tr>
                         <th>번호</th>
                         <th>제목</th>
@@ -35,48 +35,49 @@
                         <th>날짜</th>
                         <th>조회수</th>
                     </tr>
-                 </thead>
-                <tbody>
-                    
-            <!-- <div class="board-contents">
-                <table>
-                <tr>
-                <th class="post-num">글번호</th>
-                <th class="post-title">&nbsp;&nbsp;&nbsp;&nbsp;제목</th>
-                <th class="post-writer">작성자</th>
-                <th class="post-views">조회수</th>
-                </tr> -->
-                {% for post in page_posts %}
-                <tr>
-                    <td id = "blog_id">{{post.id}}</td>
-                    <td id = "blog_owner"><a href="{% url 'detail' post.id %}">{{post.title}}</a></td>
-                    <td id = "blog_title">{{post.owner}}</td>
-                    <td id = "blog_date">{{post.pub_date}}</td>
-                    <td id = "blog_view">{{post.views}}</td>
-                </tr>
-                {% endfor %}
-            </tbody>
+                    </thead>
+                    <tbody>
+
+                    <!-- <div class="board-contents">
+                        <table>
+                        <tr>
+                        <th class="post-num">글번호</th>
+                        <th class="post-title">&nbsp;&nbsp;&nbsp;&nbsp;제목</th>
+                        <th class="post-writer">작성자</th>
+                        <th class="post-views">조회수</th>
+                        </tr> -->
+                    {% for post in page_posts %}
+                    <tr>
+                        <td id="blog_id">{{post.id}}</td>
+                        <td id="blog_owner"><a href="{% url 'detail' post.id %}">{{post.title}}</a></td>
+                        <td id="blog_title">{{post.owner}}</td>
+                        <td id="blog_date">{{post.pub_date}}</td>
+                        <td id="blog_view">{{post.views}}</td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
                 </table>
-            
+
             </div>
-            <div class="freeboard-search" style = "text-align: center; width:100%;">
-                <form method="POST" action="{% url 'freeboardSearch' %}" style ="width : 90%;">
+            <div class="freeboard-search" style="text-align: center; width:100%;">
+                <form method="POST" action="{% url 'freeboardSearch' %}" style="width : 90%;">
                     {% csrf_token %}
                     <select id="" name='condition'>
                         <option class="titlesearch" value="titlesearch">글제목</option>
                         <option class="bodysearch" value="bodysearch">내용</option>
                         <option class="ownersearch" value="ownersearch">작성자</option>
                     </select>
-                    <input type="text" class="freeboard-searchbox" name='input'><button class="freeboard-btn">검색</button>
+                    <input type="text" class="freeboard-searchbox" name='input'>
+                    <button class="freeboard-btn">검색</button>
                 </form>
             </div>
-            <div class="paginator" style = "text-align: center">
+            <div class="paginator" style="text-align: center">
                 {% if page_posts.has_previous %}
-                    <a href="?page=1">First</a>
-                    <a href="?page={{page_posts.previous_page_number}}">Previous</a>
+                <a href="?page=1">First</a>
+                <a href="?page={{page_posts.previous_page_number}}">Previous</a>
                 {% endif %}
-                    <span>{{page_posts.number}}</span>
-                    <span>of<span>
+                <span>{{page_posts.number}}</span>
+                <span>of<span>
                     <span>{{page_posts.paginator.num_pages}}</span>
         
                 {% if page_posts.has_next %}
@@ -86,7 +87,7 @@
             </div>
         </div>
     </div>
-   
+
 </div>
 </div>
 
